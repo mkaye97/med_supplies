@@ -1,5 +1,5 @@
 # MedHub
-![MedHub company logo](./assets/MedHub.png)
+![MedHub company logo](./client/assets/MedHub.png)
 
 MedHub is a MERN full stack website designed to provide a seamless experience for users to purchase medical supplies and participate in charitable donations for those in need. By combining the convenience of an online storefront with the ability to make a positive impact in the world, MedHub aims to revolutionize the way medical supplies are accessed and shared.
 
