@@ -16,16 +16,16 @@ const rentalSchema = new Schema({
     },
     rentalDate: {
         type: Date,
-        default: () => dayjs().toDate()
+        default: (Date.now)
     },
     rentalPeriod: {
         type: Number,
-        default: 14
+        default: 14 * 24 * 60 * 60 * 1000
     },
     returnDate: {
        type: Date,
         default: function () {
-            return dayjs().add(this.rentalPeriod, 'day').toDate();
+            return new Date(Date.now() + this.rentalPeriod);
         }
     }
 });
