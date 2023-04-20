@@ -16,10 +16,20 @@ const typeDefs = gql`
     category: Category
   }
 
+  type Rental {
+    _id: ID
+    product: Product!
+    renter: User!
+    rentalDate: String!
+    rentalPeriod: Int!
+    returnDate: String!
+  }
+
   type Order {
     _id: ID
     purchaseDate: String
     products: [Product]
+    rentals: [Rental]
   }
 
   type User {
