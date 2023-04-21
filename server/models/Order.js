@@ -12,7 +12,13 @@ const orderSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'Product'
     }
-  ]
+  ],
+  rentals: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Rental'
+    }
+  ],
 });
 
 const Order = mongoose.model('Order', orderSchema);
