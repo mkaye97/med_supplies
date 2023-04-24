@@ -19,7 +19,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function SignInSide() {
+export default function SignInSide(props) {
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -27,6 +27,7 @@ export default function SignInSide() {
             email: data.get('email'),
             password: data.get('password'),
         });
+        props.onSignIn();
     };
 
     return (
