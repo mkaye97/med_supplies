@@ -48,8 +48,8 @@ export default function ItemCard() {
                             </Typography>
                         </CardContent>
                         <CardActions>
-                            <Button size="small">View</Button>
-                            <Button size="small">Edit</Button>
+                            <Button size="small">Add To Cart</Button>
+                            <Button size="small">Rentable?</Button>
                         </CardActions>
                     </Paper>
                 </Grid>

@@ -17,6 +17,7 @@ import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ItemCard from './ItemCard';
 import Nav from './Nav';
+import CartModal from './CartModal';
 
 function Copyright() {
   return (
@@ -37,7 +38,6 @@ export default function Album() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Nav />
       <main>
         {/* Hero unit */}
         <Box
@@ -68,8 +68,8 @@ export default function Album() {
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained">Main call to action</Button>
-              <Button variant="outlined">Secondary action</Button>
+              <CartModal />
+              <Button variant="outlined">Proceed to Checkout</Button>
             </Stack>
           </Container>
         </Box>
