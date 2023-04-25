@@ -54,7 +54,8 @@ export default function ItemCard() {
                         </CardContent>
                         <CardActions>
                             <Button size="small">Buy</Button>
-                            <Button size="small">Rent</Button>
+                            {product.isRentable ?
+                            <Button size="small">Rent</Button>: null}
                         </CardActions>
                     </Paper>
                 </Grid>
