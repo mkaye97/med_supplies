@@ -34,7 +34,7 @@ function Copyright() {
 
 const theme = createTheme();
 
-export default function Album() {
+export default function StoreProducts() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />

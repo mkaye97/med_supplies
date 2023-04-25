@@ -1,25 +1,22 @@
 import * as React from 'react';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { Avatar, Button, CssBaseline, TextField, Paper, Grid, Typography, Box, Link, Checkbox, FormControlLabel, Container } from '@mui/material';
+import { Avatar, Button, CssBaseline, Stack, TextField, Paper, Grid, Typography, Box, Link, Checkbox, FormControlLabel, Container } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import MedHub from '../assets/MedHub.png';
-
-function Copyright(props) {
-    return (
-        <Typography variant="body2" color="text.secondary" align="center" {...props}>
-            {'Copyright © '}
-            <Link color="inherit" href="https://mui.com/">
-                Your Website
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-}
+import { makeStyles } from '@material-ui/core/styles';
 
 const theme = createTheme();
 
-export default function SignInSide() {
+const useStyles = makeStyles({
+  root: {
+    background: 'linear-gradient(to right, #0575E6, #00F260)',
+  },
+});
+
+export default function SignIn() {
+    
+    const classes = useStyles();
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -31,7 +28,7 @@ export default function SignInSide() {
 
     return (
         <ThemeProvider theme={theme}>
-            <Grid container component="main" sx={{ height: '100vh' }}>
+            <Grid container className={classes.root} component="main" sx={{ height: '100vh' }}>
                 <CssBaseline />
                 <Grid
                     item
@@ -41,8 +38,6 @@ export default function SignInSide() {
                     sx={{
                         backgroundImage: `url(${MedHub})`,
                         backgroundRepeat: 'no-repeat',
-                        backgroundColor: (t) =>
-                            t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
                         backgroundSize: 'contain',
                         backgroundPosition: 'center',
                     }}
@@ -92,16 +87,15 @@ export default function SignInSide() {
                             >
                                 Sign In
                             </Button>
-                            <Container>
+                            <Stack sx={{ alignItems: 'center'}}>
                                 <Link href="#" variant="body2">
                                     {"Don't have an account? Sign Up"}
                                 </Link>
-                            </Container>
+                            </Stack>
                         </Box>
                     </Box>
                 </Grid>
             </Grid>
-            <Copyright sx={{ mt: 5 }} />
         </ThemeProvider>
     );
 }

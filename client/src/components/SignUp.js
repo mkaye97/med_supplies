@@ -1,12 +1,22 @@
 import * as React from 'react';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { Avatar, Button, CssBaseline, TextField, Paper, Grid, Typography, Box, Link, Checkbox, FormControlLabel, Container } from '@mui/material';
+import { Avatar, Button, CssBaseline, Stack, TextField, Paper, Grid, Typography, Box, Link, Checkbox, FormControlLabel, Container } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import MedHub from '../assets/MedHub.png';
+import { makeStyles } from '@material-ui/core/styles';
 
 const theme = createTheme();
 
-export default function SignUp() {
+const useStyles = makeStyles({
+  root: {
+    background: 'linear-gradient(to right, #0575E6, #00F260)',
+  },
+});
+
+export default function SignIn() {
+    
+    const classes = useStyles();
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -18,7 +28,7 @@ export default function SignUp() {
 
     return (
         <ThemeProvider theme={theme}>
-            <Grid container component="main" sx={{ height: '100vh' }}>
+            <Grid container className={classes.root} component="main" sx={{ height: '100vh' }}>
                 <CssBaseline />
                 <Grid
                     item
@@ -28,8 +38,6 @@ export default function SignUp() {
                     sx={{
                         backgroundImage: `url(${MedHub})`,
                         backgroundRepeat: 'no-repeat',
-                        backgroundColor: (t) =>
-                            t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
                         backgroundSize: 'contain',
                         backgroundPosition: 'center',
                     }}
@@ -79,11 +87,11 @@ export default function SignUp() {
                             >
                                 Sign In
                             </Button>
-                            <Container>
+                            <Stack sx={{ alignItems: 'center'}}>
                                 <Link sx={{ justifyContent: 'center' }} href="#" variant="body2">
                                     {"Already have an account? Log In Here"}
                                 </Link>
-                            </Container>
+                            </Stack>
                         </Box>
                     </Box>
                 </Grid>
