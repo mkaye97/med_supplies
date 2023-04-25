@@ -3,8 +3,11 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { Avatar, Button, CssBaseline, Stack, TextField, Paper, Grid, Typography, Box, Link, Checkbox, FormControlLabel, Container } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { makeStyles } from '@material-ui/core/styles';
+import { useNavigate } from 'react-router-dom';
+
 
 const theme = createTheme();
+
 
 const useStyles = makeStyles({
   root: {
@@ -13,11 +16,13 @@ const useStyles = makeStyles({
 });
 
 export default function SignIn() {
-    
+  const navigate = useNavigate();
     const classes = useStyles();
 
     const handleSubmit = (event) => {
+        navigate('/store-products')
         event.preventDefault();
+        event.stopPropagation();
         const data = new FormData(event.currentTarget);
         console.log({
             email: data.get('email'),
