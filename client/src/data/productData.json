@@ -20,7 +20,7 @@
       "price": 5.99,
       "quantity": 10,
       "category": "PPE",
-      "isRentable": true,
+      "isRentable": false,
       "rentalPrice": 1.99,
       "rentalPeriod": 7,
       "rentalStock": 10
@@ -59,7 +59,7 @@
         "price": 5.99,
         "quantity": 10,
         "category": "Tests",
-        "isRentable": true,
+        "isRentable": false,
         "rentalPrice": 1.99,
         "rentalPeriod": 7,
         "rentalStock": 10
@@ -85,7 +85,7 @@
         "price": 5.99,
         "quantity": 10,
         "category": "First Aid",
-        "isRentable": true,
+        "isRentable": false,
         "rentalPrice": 1.99,
         "rentalPeriod": 7,
         "rentalStock": 10
