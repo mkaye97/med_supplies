@@ -1,6 +1,9 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+
+  scalar GQLDate
+
   type Category {
     _id: ID
     name: String
@@ -57,6 +60,24 @@ const typeDefs = gql`
     user: User
     order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
+    charities: [Charity]
+    charity(_id: ID, charityName: String): Charity
+    rentals: [Rental]
+  }
+
+  type Charity {
+    _id: ID
+    charityName: String
+    description: String
+  }
+
+  type Rental {
+   _id: ID
+   product: String
+   renter: String
+   rentalDate: GQLDate
+   rentalPeriod: Int
+   returnDate: GQLDate
   }
 
   type Mutation {
