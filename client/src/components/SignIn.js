@@ -2,7 +2,6 @@ import * as React from 'react';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { Avatar, Button, CssBaseline, Stack, TextField, Paper, Grid, Typography, Box, Link, Checkbox, FormControlLabel, Container } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import MedHub from '../assets/MedHub.png';
 import { makeStyles } from '@material-ui/core/styles';
 
 const theme = createTheme();
@@ -24,7 +23,6 @@ export default function SignIn() {
             email: data.get('email'),
             password: data.get('password'),
         });
-        props.onSignIn();
     };
 
     return (
@@ -37,7 +35,7 @@ export default function SignIn() {
                     sm={4}
                     md={7}
                     sx={{
-                        backgroundImage: `url(${MedHub})`,
+                        backgroundImage: `url(/images/MedHub.png)`,
                         backgroundRepeat: 'no-repeat',
                         backgroundSize: 'contain',
                         backgroundPosition: 'center',
