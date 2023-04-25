@@ -78,7 +78,6 @@ export default function StoreProducts() {
         >
           Something here to give the footer a purpose!
         </Typography>
-        <Copyright />
       </Box>
       {/* End footer */}
     </ThemeProvider>

@@ -19,7 +19,6 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ItemCard from './ItemCard';
 import Nav from './Nav';
 import CartModal from './CartModal';
-import MedHub from '../assets/MedHub.png';
 
 const theme = createTheme();
 
@@ -33,7 +32,7 @@ export default function Album() {
                     A short description about the organization. A short description about the organization.
                     A short description about the organization. A short description about the organization.
                 </Typography>
-                <CardMedia component="img" image={MedHub} />
+                <CardMedia component="img" image='url(/images/MedHub.png)' />
                 <Stack>
                 <Button sx={{ my: 3 }} variant='outlined' size="large">Organization Homepage</Button>
                 </Stack>

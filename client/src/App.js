@@ -20,7 +20,7 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<Navigate to="/signin" />} />
-          <Route path="/signin" element={isSignedIn ? <Navigate to="/store-products" /> : <SignIn onSignIn={handleSignIn} />} />
+          <Route path="/signin" element={isSignedIn ? <Navigate to="/store-products" /> : <SignIn />} />
           <Route path="/store-products" element={<StoreProducts />} />
         </Routes>
       </div>
