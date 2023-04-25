@@ -17,28 +17,14 @@ import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ItemCard from './ItemCard';
 import Nav from './Nav';
-// import {productData}  from './productData.json';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import CartModal from './CartModal';
 
 const theme = createTheme();
 
-export default function Album() {
+export default function StoreProducts() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Nav />
       <main>
         {/* Hero unit */}
         <Box
@@ -69,8 +55,8 @@ export default function Album() {
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained">Main call to action</Button>
-              <Button variant="outlined">Secondary action</Button>
+              <CartModal />
+              <Button variant="outlined">Proceed to Checkout</Button>
             </Stack>
           </Container>
         </Box>

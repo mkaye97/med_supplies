@@ -1,6 +1,9 @@
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import { useState } from 'react';
 import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
+import Nav from './components/Nav';
+import Charity from './components/Charity';
 import StoreProducts from './components/StoreProducts';
 import './App.css';
 import SignInSide from './components/SignIn';

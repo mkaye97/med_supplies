@@ -28,10 +28,13 @@ export default function Nav() {
     return (
         <AppBar position="relative">
             <Toolbar>
-                <HealingIcon sx={{ mr: 2 }} />
-                <Typography variant="h6" color="inherit" noWrap>
-                    Products
+                <HealingIcon sx={{ fontSize: 40, mr: 2 }} />
+                <Typography sx={{ fontSize: 40}} variant="h6" color="inherit" noWrap>
+                    Med Hub
                 </Typography>
+                <Link sx={{ color: "red", px: 5, fontSize: 20 }} component="button" variant="body2" onClick={() => { console.info("I'm a button.") }}>Link 1</Link>
+                <Link sx={{ color: "red", px: 5, fontSize: 20 }} component="button" variant="body2" onClick={() => { console.info("I'm a button.") }}>Link 2</Link>
+                <Link sx={{ color: "red", px: 5, fontSize: 20 }} component="button" variant="body2" onClick={() => { console.info("I'm a button.") }}>Link 3</Link>
                 <LogoutButtonWrapper>
                     <Button placement="right" color="success" variant="contained">Logout</Button>
                 </LogoutButtonWrapper>

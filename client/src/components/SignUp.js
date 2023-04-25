@@ -24,7 +24,6 @@ export default function SignIn() {
             email: data.get('email'),
             password: data.get('password'),
         });
-        props.onSignIn();
     };
 
     return (
@@ -89,8 +88,8 @@ export default function SignIn() {
                                 Sign In
                             </Button>
                             <Stack sx={{ alignItems: 'center'}}>
-                                <Link href="#" variant="body2">
-                                    {"Don't have an account? Sign Up"}
+                                <Link sx={{ justifyContent: 'center' }} href="#" variant="body2">
+                                    {"Already have an account? Log In Here"}
                                 </Link>
                             </Stack>
                         </Box>
