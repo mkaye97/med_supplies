@@ -17,6 +17,7 @@ import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ItemCard from './ItemCard';
 import Nav from './Nav';
+// import {productData}  from './productData.json';
 
 function Copyright() {
   return (
