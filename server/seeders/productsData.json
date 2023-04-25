@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Ventilator",
+        "description": "Ventilator",
+        "image": "../image/",
+        "price": 100.00,
+        "quantity": 1,
+        "isRentable": true
+    },
+    {
+        "name": "Pacemaker",
+        "description": "Pacemaker",
+        "image": "",
+        "price": 200.00,
+        "quantity": 1,
+        "isRentable": false
+    }
+]
