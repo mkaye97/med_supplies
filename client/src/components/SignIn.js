@@ -2,7 +2,7 @@ import * as React from 'react';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { Avatar, Button, CssBaseline, TextField, Paper, Grid, Typography, Box, Link, Checkbox, FormControlLabel, Container } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import MedHub from '../assets/MedHub.png';
+import MedHub from '../images/MedHub.png';
 
 function Copyright(props) {
     return (
