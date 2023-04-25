@@ -1,0 +1,92 @@
+const { gql } = require('apollo-server-express');
+
+const typeDefs = gql`
+
+  scalar GQLDate
+
+  type Category {
+    _id: ID
+    name: String
+  }
+
+  type Product {
+    _id: ID
+    name: String
+    description: String
+    image: String
+    quantity: Int
+    price: Float
+    category: Category
+  }
+
+  type Rental {
+    _id: ID
+    product: Product!
+    renter: User!
+    rentalDate: String!
+    rentalPeriod: Int!
+    returnDate: String!
+  }
+
+  type Order {
+    _id: ID
+    purchaseDate: String
+    products: [Product]
+    rentals: [Rental]
+  }
+
+  type User {
+    _id: ID
+    firstName: String
+    lastName: String
+    username: String
+    email: String
+    orders: [Order]
+  }
+
+  type Checkout {
+    session: ID
+  }
+
+  type Auth {
+    token: ID
+    user: User
+  }
+
+  type Query {
+    categories: [Category]
+    products(category: ID, name: String): [Product]
+    product(_id: ID!): Product
+    user: User
+    order(_id: ID!): Order
+    checkout(products: [ID]!): Checkout
+    charities: [Charity]
+    charity(_id: ID, charityName: String): Charity
+    rentals: [Rental]
+  }
+
+  type Charity {
+    _id: ID
+    charityName: String
+    description: String
+  }
+
+  type Rental {
+   _id: ID
+   product: String
+   renter: String
+   rentalDate: GQLDate
+   rentalPeriod: Int
+   returnDate: GQLDate
+  }
+
+  type Mutation {
+    addUser(firstName: String!, lastName: String!, username: String!, email: String!, password: String!): Auth
+    addOrder(products: [ID]!): Order
+    updateUser(firstName: String, lastName: String, username: String, email: String, password: String): User
+    updateProduct(_id: ID!, quantity: Int!): Product
+    login(username: String!, password: String!): Auth
+  }
+`;
+
+module.exports = typeDefs;

@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+// import { useState } from 'react';
+import SignIn from './components/SignIn';
+// import SignUp from './components/SignUp';
+// import Nav from './components/Nav';
+// import Charity from './components/Charity';
+import StoreProducts from './components/StoreProducts';
 import './App.css';
+// import SignInSide from './components/SignIn';
 
 function App() {
+  // const [isSignedIn, setIsSignedIn] = useState(false);
+
+  // const handleSignIn = () => {
+  //   setIsSignedIn(true);
+  // };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<Navigate to="/signin" />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/store-products" element={<StoreProducts />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

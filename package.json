@@ -1,5 +1,5 @@
 {
-  "name": "med-supplies",
+  "name": "medhub",
   "version": "1.0.0",
   "description": "",
   "main": "server/server.js",
@@ -15,5 +15,10 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "react-redux": "^8.0.5",
+    "redux": "^4.2.1"
   }
 }
