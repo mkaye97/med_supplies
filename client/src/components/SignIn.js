@@ -2,7 +2,7 @@ import * as React from 'react';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { Avatar, Button, CssBaseline, TextField, Paper, Grid, Typography, Box, Link, Checkbox, FormControlLabel, Container } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import MedHub from '../assets/MedHub.png';
+import MedHub from '../images/MedHub.png';
 
 function Copyright(props) {
     return (
@@ -19,7 +19,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function SignInSide() {
+export default function SignInSide(props) {
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -27,6 +27,7 @@ export default function SignInSide() {
             email: data.get('email'),
             password: data.get('password'),
         });
+        props.onSignIn();
     };
 
     return (
