@@ -18,52 +18,62 @@ import Paper from '@mui/material/Paper';
 // import { createTheme, ThemeProvider } from '@mui/material/styles';
 import productData from '../data/productData.json';
 import Divider from '@mui/material/Divider';
+import MenuItem from "@mui/material/MenuItem";
+import Select from "@mui/material/Select";
 
 export default function ItemCard() {
+const [perPage, setPerPage] = React.useState(10);
 
+const handleChange = (event) => {
+    setPerPage(event.target.value);
+};
 
     return (
         <Grid container spacing={4}>
-            {productData.map((product) => (
+            <Grid item xs={12}>
+                <Paper sx={{ display: "flex", justifyContent: "flex-end", mb: 2 }}>
+                    <Typography variant="subtitle1" sx={{ mt: 1, mr: 2 }}>
+                        Products per page:
+                    </Typography>
+                    <Select value={perPage} onChange={handleChange}>
+                        <MenuItem value={10}>10</MenuItem>
+                        <MenuItem value={20}>20</MenuItem>
+                        <MenuItem value={30}>30</MenuItem>
+                    </Select>
+                </Paper>
+            </Grid>
+            {productData.slice(0, perPage).map((product) => (
                 <Grid item key={product.id} xs={12} sm={6} md={4}>
                     <Paper
-                        elevation={5}
-                        sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
-                >
+                    elevation={5}
+                    sx={{ height: "100%", display: "flex", flexDirection: "column" }}
+                    >
                         <CardMedia
-                            component="img"
-                            sx={{
-                                // 16:9
-                                pt: '56.25%',
-                            }}
-                            image={product.image}
-                            alt="random"
+                        component="img"
+                        sx={{
+                            pt: "56.25%",
+                        }}
+                        image={product.image}
+                        alt="random"
                         />
                         <CardContent sx={{ flexGrow: 1 }}>
-                        <Typography gutterBottom variant="h5" component="h2">
-                {product.name}
-              </Typography>
-              <Divider />
-              <Typography>
-                {product.description}
-              </Typography>
-              <Divider />
-              <Typography>
-                Price: ${product.price}
-              </Typography>
-              <Divider />
-              <Typography>
-                Availability: {product.quantity} items
-              </Typography>
+                            <Typography gutterBottom variant="h5" component="h2">
+                                {product.name}
+                            </Typography>
+                            <Divider />
+                            <Typography>{product.description}</Typography>
+                            <Divider />
+                            <Typography>Price: ${product.price}</Typography>
+                            <Divider />
+                            <Typography>Availability: {product.quantity} items</Typography>
                         </CardContent>
                         <CardActions>
                             <Button size="small">Buy</Button>
-                            {product.isRentable ?
-                            <Button size="small">Rent</Button>: null}
+                            {product.isRentable ? <Button size="small">Rent</Button> : null}
                         </CardActions>
                     </Paper>
-                </Grid>
+                    </Grid>
             ))}
         </Grid>
-    )
+    );
 }
