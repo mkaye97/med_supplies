@@ -11,7 +11,7 @@ const charitySchema = new Schema({
     {
       type: String,
       minlength: 1,
-      maxlength: 255
+      maxlength: 65350
     }
   ]
 });
