@@ -15,8 +15,60 @@ import InputLabel from '@mui/material';
 
 import { ADD_DONATION } from '../utils/mutations';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
       background: 'linear-gradient(to right, #0575E6, #00F260)',
     },
-  });
+    modal: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+      paper: {
+        backgroundColor: theme.palette.background.paper,
+        border: '2px solid #000',
+        boxShadow: theme.shadows[5],
+        padding: theme.spacing(2, 4, 3),
+      }
+  }));
+
+
+  export default function Donation() {
+    const classes = useStyles();
+    const [open, setOpen] = useState(false);
+    const [charityId, setCharityId] = useState('');
+    const [donationAmount, setDonationAmount] = useState('');
+  
+    const [addDonation, { error }] = useMutation(ADD_DONATION);
+  
+    const handleOpen = () => {
+      setOpen(true);
+    };
+  
+    const handleClose = () => {
+      setOpen(false);
+    };
+  
+    const handleCharityChange = (event) => {
+      setCharityId(event.target.value);
+    };
+  
+    const handleDonationAmountChange = (event) => {
+      setDonationAmount(event.target.value);
+    };
+  
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+  
+      try {
+        await addDonation({
+          variables: { charityId, amount: parseFloat(donationAmount) },
+        });
+  
+        handleClose();
+        setCharityId('');
+        setDonationAmount('');
+      } catch (e) {
+        console.error(e);
+      }
+    };
