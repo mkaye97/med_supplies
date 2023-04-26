@@ -35,8 +35,8 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_ORDER = gql`
-  mutation addOrder($products: [ID]!, $rentals: [ID]) {
-    addOrder(products: $products, rentals: $rentals) {
+  mutation addOrder($products: [ID]!, $rentals: [ID], $donations:[ID], $charities: [ID]) {
+    addOrder(products: $products, rentals: $rentals, donations: $donations, charities: $charities) {
       purchaseDate
       products {
         _id
