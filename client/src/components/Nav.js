@@ -17,7 +17,29 @@ import Link from '@mui/material/Link';
 // import { createTheme, ThemeProvider } from '@mui/material/styles';
 // import ItemCard from './ItemCard';
 import styled from '@emotion/styled';
+import {
+  Link as RouterLink,
+  LinkProps as RouterLinkProps,
+  MemoryRouter,
+} from 'react-router-dom';
 
+
+const LinkBehavior = React.forwardRef((props, ref) => (
+  <RouterLink ref={ref} to="/material-ui/getting-started/installation/" {...props} />
+));
+
+function Router(props) {
+  const { children } = props;
+  if (typeof window === 'undefined') {
+    return <StaticRouter location="/">{children}</StaticRouter>;
+  }
+
+  return <MemoryRouter>{children}</MemoryRouter>;
+}
+
+Router.propTypes = {
+  children: PropTypes.node,
+};
 const LogoutButtonWrapper = styled('button')(({ theme }) => ({
     backgroundColor: 'inherit',
     marginLeft: 'auto',
@@ -32,12 +54,17 @@ export default function Nav() {
                 <Typography sx={{ fontSize: 40}} variant="h6" color="inherit" noWrap>
                     Med Hub
                 </Typography>
-                <Link sx={{ color: "red", px: 5, fontSize: 20 }} component="button" variant="body2" onClick={() => { console.info("I'm a button.") }}>Link 1</Link>
-                <Link sx={{ color: "red", px: 5, fontSize: 20 }} component="button" variant="body2" onClick={() => { console.info("I'm a button.") }}>Link 2</Link>
-                <Link sx={{ color: "red", px: 5, fontSize: 20 }} component="button" variant="body2" onClick={() => { console.info("I'm a button.") }}>Link 3</Link>
+                   <Router>
+                <Link component={RouterLink} to="/" sx={{ color: "red", px: 5, fontSize: 20 }} variant="body2" onClick={() => { console.info("I'm a button.") }}>Home</Link>
+                <Link component={RouterLink} to="/StoreProducts" sx={{ color: "red", px: 5, fontSize: 20 }}  variant="body2" onClick={() => { console.info("I'm a button.") }}>Products</Link>
+                <Link component={RouterLink} to="/SignIn" sx={{ color: "red", px: 5, fontSize: 20 }}  variant="body2" onClick={() => { console.info("I'm a button.") }}>Sign In</Link>
+                <Link component={RouterLink} to="/SignUp" sx={{ color: "red", px: 5, fontSize: 20 }}  variant="body2" onClick={() => { console.info("I'm a button.") }}>Sign Up</Link>
+                <Link component={RouterLink} to="/Donation" sx={{ color: "red", px: 5, fontSize: 20 }}  variant="body2" onClick={() => { console.info("I'm a button.") }}>Make a Donation</Link>
+                <Link component={RouterLink} to="/Dashboard" sx={{ color: "red", px: 5, fontSize: 20 }}  variant="body2" onClick={() => { console.info("I'm a button.") }}>Dashboard</Link>
                 <LogoutButtonWrapper>
-                    <Button placement="right" color="success" variant="contained">Logout</Button>
+                    <Button component={RouterLink} to="/" placement="right" color="success" variant="contained">Logout</Button>
                 </LogoutButtonWrapper>
+                </Router>
             </Toolbar>
         </AppBar>
     )

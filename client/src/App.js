@@ -5,6 +5,7 @@ import SignIn from './components/SignIn';
  import Nav from './components/Nav';
 // import Charity from './components/Charity';
 import StoreProducts from './components/StoreProducts';
+import Dashboard from './components/Dashboard';
 import './App.css';
 // import SignInSide from './components/SignIn';
 import {
@@ -50,7 +51,8 @@ function App() {
           <Route path="/" element={<Navigate to="/signin" />} />
           <Route path="/signin" element={<SignIn />} />
            <Route path="/SignUp" element={<SignUp />} />
-          <Route path="/store-products" element={<StoreProducts />} />
+           <Route path="/Dashboard" element={<Dashboard />} />
+          <Route path="/StoreProducts" element={<StoreProducts />} />
         </Routes>
       </div>
     </Router>
