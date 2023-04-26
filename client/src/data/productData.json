@@ -1,12 +1,12 @@
 [
     {
-<<<<<<<<< Temporary merge branch 1
+
         "id": 1,
         "name": "First Aid Kit (216 Pieces)",
         "description": "A comprehensive first aid kit containing 216 essential items for emergency situations.",
         "image": "../images/americanredcross_firstaidkit.jpg",
         "price": 34.99,
-=========
+
       "id": 1,
       "name": "First Aid Kit (216 Pieces)",
       "description": "Large 50 Person Red Cross First Aid Kit",
@@ -74,7 +74,7 @@
       {
         "id": 6,
         "name": "Dual Head Stethoscope",
-        "description": "This is product 2",
+        "description": "Dual Head Strethoscope",
         "image": "../images/dualheadstethoscope.jpg",
         "price": 5.99,
         "quantity": 10,
@@ -90,7 +90,7 @@
         "description": "This is product 2",
         "image": "../images/firstaidkit_milwa.png",
         "price": 5.99,
->>>>>>>>> Temporary merge branch 2
+
         "quantity": 10,
         "category": "First Aid",
         "isRentable": true,
