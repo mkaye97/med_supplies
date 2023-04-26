@@ -4,6 +4,7 @@ const usersData = require('./usersData.json');
 const productsData = require('./productsData.json');
 const charitiesData = require('./charitiesData.json');
 const categoriesData = require('./categoriesData.json');
+const mongoose = require('mongoose');
 
 db.once('open', async () => {
   try {
@@ -15,7 +16,11 @@ db.once('open', async () => {
 
     await User.create(usersData);
     await Category.create(categoriesData);
-    await Product.create(productsData);
+    const products = productsData.map(product => ({
+      ...product,
+      category: mongoose.Types.ObjectId()
+    }));
+    await Product.create(products);
     await Charity.create(charitiesData);
 
    

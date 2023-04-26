@@ -1,17 +1,71 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Product, Category, Order } = require('../models');
+const { User, Product, Category, Order, Charity, Rental, Donation } = require('../models');
 const { signToken } = require('../utils/auth');
-const { GraphQLDateTime } = require('graphql-iso-date')
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+const { GraphQLScalarType, Kind } = require('graphql');
+
+//=========================================================================
+// Author: Uchenna Obicheta
+// Date: 4/25/2023
+// Description: Added custom date scalar to allow graphql to resolve dates
+//=========================================================================
+
+const dateScalar = new GraphQLScalarType({
+  name: 'Date',
+  description: 'Date custom scalar type',
+  serialize(value) {
+    if (value instanceof Date) {
+      return value.getTime(); // Convert outgoing Date to integer for JSON
+    }
+    throw Error('GraphQL Date Scalar serializer expected a `Date` object');
+  },
+  parseValue(value) {
+    if (typeof value === 'number') {
+      return new Date(value); // Convert incoming integer to Date
+    }
+    throw new Error('GraphQL Date Scalar parser expected a `number`');
+  },
+  parseLiteral(ast) {
+    if (ast.kind === Kind.INT) {
+      // Convert hard-coded AST string to integer and then to Date
+      return new Date(parseInt(ast.value, 10));
+    }
+    // Invalid hard-coded value (not an integer)
+    return null;
+  },
+});
+
+//=========================================================================
+//=========================================================================
 
 const resolvers = {
   
-  GQLDate: GraphQLDateTime,
-
+  Date: dateScalar,
   Query: {
     categories: async () => {
       return await Category.find();
     },
+    /* 
+     Author: Uchenna Obicheta
+     Description: Resolvers for Charity, Donation, and Rental models
+     Added the following lines
+    */
+     charities: async () => {
+       return await Charity.find({});
+     },
+
+     rentals: async () => {
+       return await Rental.find({});
+     },
+
+     donations: async () => {
+       return await Donation.find({});
+     },
+
+     /*
+     End of new lines added
+     */
+
     products: async (parent, { category, name }) => {
       const params = {};
 
@@ -140,7 +194,28 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+     /* 
+     Author: Uchenna Obicheta
+     Description: Mutation for Donation model
+     Added the following lines
+    */
+    addDonation: async(parent, { input }) => {
+
+    const { amount, user_id, charity_id } = input;
+
+    const newDonation = await Donation.create({
+           amount,
+           user_id,
+           charity_id
+          });
+
+      return newDonation;
+
     }
+    /*
+     End of new lines added
+     */
   }
 };
 
