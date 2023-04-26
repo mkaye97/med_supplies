@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 // import { useState } from 'react';
 import SignIn from './components/SignIn';
-// import SignUp from './components/SignUp';
-// import Nav from './components/Nav';
+ import SignUp from './components/SignUp';
+ import Nav from './components/Nav';
 // import Charity from './components/Charity';
 import StoreProducts from './components/StoreProducts';
 import './App.css';
@@ -45,9 +45,11 @@ function App() {
     <ApolloProvider client={client}>
     <Router>
       <div>
+        <Nav/>
         <Routes>
           <Route path="/" element={<Navigate to="/signin" />} />
           <Route path="/signin" element={<SignIn />} />
+           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/store-products" element={<StoreProducts />} />
         </Routes>
       </div>
