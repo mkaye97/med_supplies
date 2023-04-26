@@ -93,7 +93,7 @@ export const ADD_ORDER = gql`
 `;
 
 export const UPDATE_USER = gql`
-  mutation UpdateUser($firstName: String, $lastName: String, $username: String, $email: String, $password: String) {
+  mutation updateUser($firstName: String, $lastName: String, $username: String, $email: String, $password: String) {
     updateUser(firstName: $firstName, lastName: $lastName, username: $username, email: $email, password: $password) {
       _id
       firstName
@@ -105,7 +105,7 @@ export const UPDATE_USER = gql`
 `;
 
 export const UPDATE_PRODUCT = gql`
-  mutation UpdateProduct($_id: ID!, $quantity: Int!) {
+  mutation updateProduct($_id: ID!, $quantity: Int!) {
     updateProduct(_id: $_id, quantity: $quantity) {
       _id
       name
