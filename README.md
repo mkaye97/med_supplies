@@ -1,5 +1,5 @@
 # MedHub
-![MedHub company logo](./client/public/assets/MedHub.png)
+![MedHub company logo](./client/public/images/MedHub.png)
 
 MedHub is a MERN full stack website designed to provide a seamless experience for users to purchase medical supplies and participate in charitable donations for those in need. By combining the convenience of an online storefront with the ability to make a positive impact in the world, MedHub aims to revolutionize the way medical supplies are accessed and shared.
 
@@ -37,10 +37,11 @@ Stripe - Payment processing
 
 
 ## Authors
-Uchenna Obicheta - 
-Matt Kaye - 
-Gavin Price - 
-AB Villalobos -
+Uchenna Obicheta - </br>
+Matt Kaye -  </br>
+Gavin Price - </br>
+AB Villalobos - </br>
+Seiya Miyazaki - </br>
 
 #### License
 This project is licensed under the MIT License -
