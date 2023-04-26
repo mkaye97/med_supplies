@@ -266,7 +266,7 @@
         "image": "../images/watchpillbox.jpg",
         "price": 5.99,
         "quantity": 10,
-        "category": "Wheelchairs",
+        "category": "Devices",
         "isRentable": false,
         "rentalPrice": 1.99,
         "rentalPeriod": 7,
