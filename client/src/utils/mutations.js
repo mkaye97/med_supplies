@@ -135,7 +135,18 @@ export const LOGIN = gql`
   }
 `;
 
-export const ADD_DONATION = gql``;
+export const ADD_DONATION = gql`
+  mutation AddDonation($input: DonationInput!) {
+    addDonation(input: $input) {
+      _id
+      name
+      email
+      message
+      amount
+      createdAt
+    }
+  }
+`;
 
 //
 // ~~~~~~~~~~~ `!!`~~~~~~~~~~~
