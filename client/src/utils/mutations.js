@@ -56,18 +56,34 @@ export const ADD_ORDER = gql`
         rentalPeriod
         returnDate
       }
+      donations {
+        _id
+        amount
+        charity {
+          _id
+          organization
+          description
+        }
+      }
+      charities {
+        _id
+        organization
+        description
+      }
     }
   }
 `;
 
 export const ADD_USER = gql`
   mutation addUser(
+    $username: String!
     $firstName: String!
     $lastName: String!
     $email: String!
     $password: String!
   ) {
     addUser(
+      username: $username
       firstName: $firstName
       lastName: $lastName
       email: $email
