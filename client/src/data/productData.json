@@ -209,9 +209,9 @@
       },
       {
         "id": 17,
-        "name": "Strenght Training for Seniors Book",
+        "name": "Strength Training for Seniors Book",
         "description": "Grandpa get stronk",
-        "image": "../images/seniorsstrengthbook.jpg",
+        "image": "../images/seniorstrengthbook.jpg",
         "price": 15.99,
         "quantity": 10,
         "category": "Books",
