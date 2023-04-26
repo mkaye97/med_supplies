@@ -17,6 +17,7 @@ import Paper from '@mui/material/Paper';
 // import Link from '@mui/material/Link';
 // import { createTheme, ThemeProvider } from '@mui/material/styles';
 import productData from '../data/productData.json';
+import Divider from '@mui/material/Divider';
 
 export default function ItemCard() {
 
@@ -39,18 +40,21 @@ export default function ItemCard() {
                             alt="random"
                         />
                         <CardContent sx={{ flexGrow: 1 }}>
-                            <Typography gutterBottom variant="h5" component="h2">
-                                {product.name}
-                            </Typography>
-                            <Typography>
-                                {product.description}
-                            </Typography>
-                            <Typography>
-                               Yo, this shiz costs ${product.price}
-                               </Typography>
-                               <Typography>
-                                There are {product.quantity} available!
-                            </Typography>
+                        <Typography gutterBottom variant="h5" component="h2">
+                {product.name}
+              </Typography>
+              <Divider />
+              <Typography>
+                {product.description}
+              </Typography>
+              <Divider />
+              <Typography>
+                Price: ${product.price}
+              </Typography>
+              <Divider />
+              <Typography>
+                Availability: {product.quantity} items
+              </Typography>
                         </CardContent>
                         <CardActions>
                             <Button size="small">Buy</Button>

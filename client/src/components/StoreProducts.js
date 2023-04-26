@@ -42,12 +42,13 @@ export default function StoreProducts() {
               color="text.primary"
               gutterBottom
             >
-              Album layout
+              MedHub Medical Supplies
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" paragraph>
-              Something short and leading about the collection below—its contents,
-              the creator, etc. Make it short and sweet, but not too short so folks
-              don&apos;t simply skip over it entirely.
+              Explore our wide range of high-quality medical supplies and equipment.
+              Whether you're a healthcare professional or taking care of a loved one, 
+              MedHub has everything you need. Choose between buying or renting items,
+              depending on your needs.
             </Typography>
             <Stack
               sx={{ pt: 4 }}
@@ -68,7 +69,7 @@ export default function StoreProducts() {
       {/* Footer */}
       <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
         <Typography variant="h6" align="center" gutterBottom>
-          Footer
+        MedHub Medical Supplies
         </Typography>
         <Typography
           variant="subtitle1"
@@ -76,7 +77,7 @@ export default function StoreProducts() {
           color="text.secondary"
           component="p"
         >
-          Something here to give the footer a purpose!
+          Your trusted partner in healthcare equipment and supplies.
         </Typography>
       </Box>
       {/* End footer */}
