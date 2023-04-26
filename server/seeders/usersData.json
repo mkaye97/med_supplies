@@ -1,23 +1,23 @@
 [
     {
-        "firstname": "",
-        "lastname": "",
-        "username": "",
-        "password": "",
-        "email": ""
+        "firstName": "John",
+        "lastName": "Doe",
+        "username": "jdoe",
+        "password": "welcome123",
+        "email": "jdoe@gmail.com"
     },
     {
-        "firstname": "",
-        "lastname": "",
-        "username": "",
-        "password": "",
-        "email": ""
+        "firstName": "Lance",
+        "lastName": "Anozie",
+        "username": "lanozie",
+        "password": "welcome123",
+        "email": "lanozie@hotmail.com"
     },
     {
-        "firstname": "",
-        "lastname": "",
-        "username": "",
-        "password": "",
-        "email": ""
+        "firstName": "Jane",
+        "lastName": "Doe",
+        "username": "jdoe01",
+        "password": "welcome123",
+        "email": "jdoe02@microsoft.com"
     }
 ]

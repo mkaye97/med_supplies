@@ -2,7 +2,7 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
 
-  scalar GQLDate
+  scalar Date
 
   type Category {
     _id: ID
@@ -61,8 +61,8 @@ const typeDefs = gql`
     order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
     charities: [Charity]
-    charity(_id: ID, charityName: String): Charity
     rentals: [Rental]
+    donations: [Donation]
   }
 
   type Charity {
@@ -71,21 +71,27 @@ const typeDefs = gql`
     description: String
   }
 
-  type Rental {
-   _id: ID
-   product: String
-   renter: String
-   rentalDate: GQLDate
-   rentalPeriod: Int
-   returnDate: GQLDate
-  }
+ type Donation {
+  _id: ID!
+  amount: Float!
+  user_id: ID!
+  charity_id: ID!
+}
 
-  type Mutation {
+input DonationInput {
+  amount: Float!
+  user_id: ID!
+  charity_id: ID!
+}
+
+
+type Mutation {
     addUser(firstName: String!, lastName: String!, username: String!, email: String!, password: String!): Auth
     addOrder(products: [ID]!): Order
     updateUser(firstName: String, lastName: String, username: String, email: String, password: String): User
     updateProduct(_id: ID!, quantity: Int!): Product
     login(username: String!, password: String!): Auth
+    addDonation(input: DonationInput!): Donation
   }
 `;
 

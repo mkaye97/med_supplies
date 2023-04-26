@@ -5,6 +5,7 @@
         "image": "../image/",
         "price": 100.00,
         "quantity": 1,
+        "category": 2,
         "isRentable": true
     },
     {
@@ -12,6 +13,7 @@
         "description": "Pacemaker",
         "image": "",
         "price": 200.00,
+        "category": 4,
         "quantity": 1,
         "isRentable": false
     }
