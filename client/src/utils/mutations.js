@@ -1,16 +1,34 @@
 import { gql } from '@apollo/client';
 
-// 3 mutations:  LOGIN_USER, ADD_USER & ADD_ORDER ... Order includes rentals 
-export const LOGIN_USER = gql`
-  mutation loginUser($username: String!, $password: String!) {
-    login(email: $email, password: $password) {
+//
+// ~~~~~~~~~~~ `Gavin wuz here!!`~~~~~~~~~~
+//
+//
+// Mutations for the client side:  
+// ADD_USER // ADD_ORDER // 
+// UPDATE_USER // UPDATE_PRODUCT // 
+// LOGIN // ADD DONATION 
+//
+//
+
+export const ADD_USER = gql`
+  mutation addUser(
+    $username: String!
+    $firstName: String!
+    $lastName: String!
+    $email: String!
+    $password: String!
+  ) {
+    addUser(
+      username: $username
+      firstName: $firstName
+      lastName: $lastName
+      email: $email
+      password: $password
+    ) {
       token
       user {
         _id
-        firstName
-        lastName
-        username
-        email
       }
     }
   }
@@ -61,38 +79,39 @@ export const ADD_ORDER = gql`
         amount
         charity {
           _id
-          organization
+          charityName
           description
         }
       }
       charities {
         _id
-        organization
+        charityName
         description
       }
     }
   }
 `;
 
-export const ADD_USER = gql`
-  mutation addUser(
-    $username: String!
-    $firstName: String!
-    $lastName: String!
-    $email: String!
-    $password: String!
-  ) {
-    addUser(
-      username: $username
-      firstName: $firstName
-      lastName: $lastName
-      email: $email
-      password: $password
-    ) {
+export const UPDATE_USER = gql``;
+export const UPDATE_PRODUCT = gql``;
+
+export const LOGIN = gql`
+  mutation login($username: String!, $password: String!) {
+    login(email: $email, password: $password) {
       token
       user {
         _id
+        firstName
+        lastName
+        username
+        email
       }
     }
   }
 `;
+
+export const ADD_DONATION = gql``;
+
+//
+// ~~~~~~~~~~~ `!!`~~~~~~~~~~~
+
