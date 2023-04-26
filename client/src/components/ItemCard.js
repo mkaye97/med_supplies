@@ -31,6 +31,7 @@ export default function ItemCard() {
     ? productData.filter((product) => product.category === selectedCategory)
     : productData;
   return (
+    <div style={{ backgroundColor: "#ffc0cb", margin: "0 auto", width: "100%" }}>
     <Grid container spacing={4}>
       <Grid item xs={12}>
         <Paper sx={{ display: "flex", justifyContent: "flex-end", mb: 2 }}>
@@ -90,5 +91,6 @@ export default function ItemCard() {
         </Grid>
       ))}
     </Grid>
+    </div>
   );
 }
