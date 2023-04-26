@@ -72,3 +72,70 @@ const useStyles = makeStyles((theme) => ({
         console.error(e);
       }
     };
+    return (
+        <>
+          <Button variant="contained" color="primary" onClick={handleOpen}>
+            Donate
+          </Button>
+          <Modal
+            aria-labelledby="transition-modal-title"
+            aria-describedby="transition-modal-description"
+            className={classes.modal}
+            open={open}
+            onClose={handleClose}
+            closeAfterTransition
+            BackdropComponent={Backdrop}
+            BackdropProps={{
+              timeout: 500,
+            }}
+          >
+            <Fade in={open}>
+              <div className={classes.paper}>
+                <Typography variant="h5">Select Charity</Typography>
+                <form onSubmit={handleSubmit}>
+                  <Grid container spacing={2}>
+                    <Grid item xs={12}>
+                      <FormControl fullWidth>
+                        <InputLabel id="charity-select-label">Charity</InputLabel>
+                        <Select
+                          labelId="charity-select-label"
+                          id="charity-select"
+                          value={charityId}
+                          onChange={handleCharityChange}
+                        >
+                          <MenuItem value="">
+                            <em>None</em>
+                          </MenuItem>
+                          {charities.map((charity) => (
+                            <MenuItem value={charity._id} key={charity._id}>
+                              {charity.name}
+                            </MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Grid>
+                    <Grid item xs={12}>
+                      <TextField
+                        required
+                        fullWidth
+                        label="Donation Amount"
+                        type="number"
+                        value={donationAmount}
+                        onChange={handleDonationAmountChange}
+                        />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Button variant="contained" color="primary" type="submit">
+                        Donate
+                        </Button>
+                    </Grid>
+                </Grid>
+            </form>
+            </div>
+        </Fade>
+    </Modal>
+
+{error && <div>Error: {error.message}</div>}
+</>
+);
+};
