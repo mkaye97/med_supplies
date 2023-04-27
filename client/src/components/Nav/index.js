@@ -17,25 +17,21 @@ export default function Nav() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Home</a>
+                                <a className="nav-link" href="/home">Home</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Make a Donation</a>
+                                <a className="nav-link" href="/domation">Make a Donation</a>
                             </li>
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a className="nav-link" href="/products" aria-expanded="false">
                                     Products
                                 </a>
-                                <ul className="dropdown-menu">
-                                    <li><a className="dropdown-item" href="/Weelchairs">Wheelchairs</a></li>
-                                    <li><a className="dropdown-item" href="/First Aid">First Aid</a></li>
-                                    <li><a className="dropdown-item" href="/Devices">Devices</a></li>
-                                    <li><a className="dropdown-item" href="/PPE">PPE</a></li>
-                                    <li><a className="dropdown-item" href="/Books">Books</a></li>
-                                </ul>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Dashboard</a>
+                                <a className="nav-link" href="/dashboard">Dashboard</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/signup">About Us</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">Logout</a>
@@ -55,25 +51,22 @@ export default function Nav() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a className="nav-link" aria-current="page" href="#">Home</a>
+                                <a className="nav-link" aria-current="page" href="/home">Home</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Login</a>
+                                <a className="nav-link" href="/login">Login</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Sign Up</a>
+                                <a className="nav-link" href="/signup">Sign Up</a>
                             </li>
-                            <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                            <li className="nav-item">
+                                <a className="nav-link" href="/products">
                                     Products
                                 </a>
-                                <ul className="dropdown-menu">
-                                    <li><a className="dropdown-item" href="#">Wheelchairs</a></li>
-                                    <li><a className="dropdown-item" href="#">First Aid</a></li>
-                                    <li><a className="dropdown-item" href="#">Devices</a></li>
-                                    <li><a className="dropdown-item" href="#">PPE</a></li>
-                                    <li><a className="dropdown-item" href="#">Books</a></li>
-                                </ul>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/signup">About Us</a>
                             </li>
                         </ul>
 
