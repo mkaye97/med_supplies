@@ -20,8 +20,10 @@ import styled from '@emotion/styled';
 import {
   Link as RouterLink,
   LinkProps as RouterLinkProps,
-  MemoryRouter,
+  MemoryRouter
 } from 'react-router-dom';
+import { StaticRouter } from 'react-router-dom/server';
+import PropTypes from 'prop-types';
 
 
 const LinkBehavior = React.forwardRef((props, ref) => (
@@ -40,6 +42,7 @@ function Router(props) {
 Router.propTypes = {
   children: PropTypes.node,
 };
+
 const LogoutButtonWrapper = styled('button')(({ theme }) => ({
     backgroundColor: 'inherit',
     marginLeft: 'auto',
@@ -54,7 +57,7 @@ export default function Nav() {
                 <Typography sx={{ fontSize: 40}} variant="h6" color="inherit" noWrap>
                     Med Hub
                 </Typography>
-                   <Router>
+              
                 <Link component={RouterLink} to="/" sx={{ color: "red", px: 5, fontSize: 20 }} variant="body2" onClick={() => { console.info("I'm a button.") }}>Home</Link>
                 <Link component={RouterLink} to="/StoreProducts" sx={{ color: "red", px: 5, fontSize: 20 }}  variant="body2" onClick={() => { console.info("I'm a button.") }}>Products</Link>
                 <Link component={RouterLink} to="/SignIn" sx={{ color: "red", px: 5, fontSize: 20 }}  variant="body2" onClick={() => { console.info("I'm a button.") }}>Sign In</Link>
@@ -64,7 +67,7 @@ export default function Nav() {
                 <LogoutButtonWrapper>
                     <Button component={RouterLink} to="/" placement="right" color="success" variant="contained">Logout</Button>
                 </LogoutButtonWrapper>
-                </Router>
+       
             </Toolbar>
         </AppBar>
     )
