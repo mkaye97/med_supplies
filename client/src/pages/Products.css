@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: column;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius:15px;
     box-shadow: 0 0 10px rgba(0,0,0,0.15);
     transition: 0.3s;
     justify-content: center;
@@ -58,3 +58,30 @@
     padding: 5px;
     text-align: center;
 }
+
+.add-to-cart-btn {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center;
+  }
+  .rent-me-btn {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 100%;
+    height: 50%; */
+  }

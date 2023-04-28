@@ -10,7 +10,12 @@ const Card = ({ product }) => {
           <div className="card-name">{product.name}</div>
           <div className="card-description">{product.description}</div>
           <div className="card-price">Price: ${product.price}</div>
+          <div className="btn-container">
           <button className="add-to-cart-btn">Add to cart</button>
+          {product.isRentable && (
+            <button className="rent-me-btn">Rent me</button>
+          )}
+          </div>
         </div>
         </div>
       );
