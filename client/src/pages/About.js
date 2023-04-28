@@ -1,9 +1,10 @@
 import React from "react";
+import './about.css';
 
 export default function About() {
   return (
     <main>
-      <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
+      <div id="myCarousel" className="carousel slide carousel-fade" data-bs-ride="carousel">
         <div className="carousel-indicators">
           <button
             type="button"
@@ -27,18 +28,7 @@ export default function About() {
           ></button>
         </div>
         <div className="carousel-inner">
-          <div className="carousel-item active">
-            <svg
-              className="bd-placeholder-img"
-              width="100%"
-              height="100%"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <rect width="100%" height="100%" fill="#777" />
-            </svg>
+          <div className="carousel-item active bd-img-01">
 
             <div className="container">
               <div className="carousel-caption text-start">
@@ -50,19 +40,7 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div className="carousel-item">
-            <svg
-              className="bd-placeholder-img"
-              width="100%"
-              height="100%"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <rect width="100%" height="100%" fill="#777" />
-            </svg>
-
+          <div className="carousel-item bd-img-02">
             <div className="container">
               <div className="carousel-caption">
                 <h1>Our Mission.</h1>
@@ -74,19 +52,7 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div className="carousel-item">
-            <svg
-              className="bd-placeholder-img"
-              width="100%"
-              height="100%"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <rect width="100%" height="100%" fill="#777" />
-            </svg>
-
+          <div className="carousel-item bd-img-03">
             <div className="container">
               <div className="carousel-caption text-end">
                 <h1>Charitable Work.</h1>
@@ -124,38 +90,26 @@ export default function About() {
         <div className="row mt-4">
           {/* Replace the names, descriptions, and GitHub repo links for each founder */}
           {[
-            { name: "Uchenna Obicheta", description: "Backend Boss", github: "https://github.com/founder1" },
-            { name: "Matthew Kaye", description: "Front-End Fighter", github: "https://github.com/founder2" },
-            { name: "Gavin Price", description: "Functionality Frontiersman", github: "https://github.com/founder3" },
-            { name: "Abdiel Villalobos", description: "Style Star", github: "https://github.com/founder4" },
-            { name: "Seiya Miyazaki", description: "Front-End Fighter", github: "https://github.com/founder5" },
+            { name: "Uchenna Obicheta", description: "Backend Boss", github: "https://github.com/uobie80" },
+            { name: "Matthew Kaye", description: "Front-End Fighter", github: "https://github.com/mkaye97" },
+            { name: "Gavin Price", description: "Functionality Frontiersman", github: "https://github.com/RealGavinPrice" },
+            { name: "Abdiel Villalobos", description: "Style Star", github: "https://github.com/ablobos" },
+            { name: "Seiya Miyazaki", description: "Front-End Fighter", github: "https://github.com/samiyazaki" },
           ].map((founder, index) => (
             <div className="col-lg-4 mb-4" key={index}>
-              <svg
-                className="bd-placeholder-img rounded-circle"
-                width="140"
-                height="140"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                aria-label={`Placeholder: ${founder.name}`}
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#777" />
-                <text x="50%" y="50%" fill="#777" dy=".3em">
-                  140x140
-                </text>
-              </svg>
+              <div className="avatar"></div>
 
-              <h2 className="fw-normal">{founder.name}</h2>
-              <p>{founder.description}</p>
-              <p>
-                <a className="btn btn-secondary" href={founder.github} target="_blank" rel="noreferrer">
-                  View GitHub &raquo;
-                </a>
-              </p>
+                <h2 className="fw-normal">{founder.name}</h2>
+              
+                <p>{founder.description}</p>
+                <p>
+                  <a className="btn btn-secondary" href={founder.github} target="_blank" rel="noreferrer">
+                    View GitHub &raquo;
+                  </a>
+                </p>
+              
             </div>
+            
           ))}
         </div>
 
@@ -184,78 +138,78 @@ export default function About() {
               <title>Placeholder</title>
               <rect width="100%" height="100%" fill="#eee" />
               <text x="50%" y="50%" fill="#aaa" dy=".3em">
-              500x500
-          </text>
-        </svg>
+                500x500
+              </text>
+            </svg>
+          </div>
+        </div>
+
+        <hr className="featurette-divider" />
+
+        <div className="row featurette">
+          <div className="col-md-7 order-md-2">
+            <h2 className="featurette-heading fw-normal lh-1">Supporting Charitable Organizations</h2>
+            <p className="lead">
+              MedHub actively collaborates with charitable organizations to provide medical supplies to those in need.
+              We understand the impact of healthcare on the lives of many, and we're committed to making a positive difference
+              in communities across the globe.
+            </p>
+          </div>
+          <div className="col-md-5 order-md-1">
+            <svg
+              className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+              width="500"
+              height="500"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Placeholder: 500x500"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            >
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#eee" />
+              <text x="50%" y="50%" fill="#aaa" dy=".3em">
+                500x500
+              </text>
+            </svg>
+          </div>
+        </div>
+
+        <hr className="featurette-divider" />
+
+        <div className="row featurette">
+          <div className="col-md-7">
+            <h2 className="featurette-heading fw-normal lh-1">Focusing on Areas in Need</h2>
+            <p className="lead">
+              MedHub prioritizes providing medical supplies to areas in need. We identify regions with limited access to healthcare
+              resources and work diligently to deliver essential medical supplies. Our mission is to promote better health and well-being
+              for everyone, no matter where they live.
+            </p>
+          </div>
+          <div className="col-md-5">
+            <svg
+              className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+              width="500"
+              height="500"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Placeholder: 500x500"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            >
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#eee" />
+              <text x="50%" y="50%" fill="#aaa" dy=".3em">
+                500x500
+              </text>
+            </svg>
+          </div>
+        </div>
+
+        <hr className="featurette-divider" />
       </div>
-    </div>
+    </main>
 
-    <hr className="featurette-divider" />
-
-    <div className="row featurette">
-      <div className="col-md-7 order-md-2">
-        <h2 className="featurette-heading fw-normal lh-1">Supporting Charitable Organizations</h2>
-        <p className="lead">
-          MedHub actively collaborates with charitable organizations to provide medical supplies to those in need.
-          We understand the impact of healthcare on the lives of many, and we're committed to making a positive difference
-          in communities across the globe.
-        </p>
-      </div>
-      <div className="col-md-5 order-md-1">
-        <svg
-          className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-          width="500"
-          height="500"
-          xmlns="http://www.w3.org/2000/svg"
-          role="img"
-          aria-label="Placeholder: 500x500"
-          preserveAspectRatio="xMidYMid slice"
-          focusable="false"
-        >
-          <title>Placeholder</title>
-          <rect width="100%" height="100%" fill="#eee" />
-          <text x="50%" y="50%" fill="#aaa" dy=".3em">
-            500x500
-          </text>
-        </svg>
-      </div>
-    </div>
-
-    <hr className="featurette-divider" />
-
-    <div className="row featurette">
-      <div className="col-md-7">
-        <h2 className="featurette-heading fw-normal lh-1">Focusing on Areas in Need</h2>
-        <p className="lead">
-          MedHub prioritizes providing medical supplies to areas in need. We identify regions with limited access to healthcare
-          resources and work diligently to deliver essential medical supplies. Our mission is to promote better health and well-being
-          for everyone, no matter where they live.
-        </p>
-      </div>
-      <div className="col-md-5">
-        <svg
-          className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-          width="500"
-          height="500"
-          xmlns="http://www.w3.org/2000/svg"
-          role="img"
-          aria-label="Placeholder: 500x500"
-          preserveAspectRatio="xMidYMid slice"
-          focusable="false"
-        >
-          <title>Placeholder</title>
-          <rect width="100%" height="100%" fill="#eee" />
-          <text x="50%" y="50%" fill="#aaa" dy=".3em">
-            500x500
-          </text>
-        </svg>
-      </div>
-    </div>
-
-    <hr className="featurette-divider" />
-  </div>
-</main>
-
-    );
-    }
+  );
+}
 
