@@ -61,7 +61,6 @@ export const ADD_ORDER = gql`
             _id
             name
           }
-          isRentable
         }
         renter {
           _id

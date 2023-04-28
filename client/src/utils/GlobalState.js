@@ -1,6 +1,4 @@
 //
-// ~~~~~~~~~~~ `Gavin wuz here!!`~~~~~~~~~~
-//
 // 
 // useContext is a react hook that 
 // lets components accept values from 
@@ -40,15 +38,17 @@ const StoreProvider = ({ value = [], ...props }) => {
     cartOpen: false,
     categories: [],
     currentCategory: '',
+    rentals: [],
+    donations: [],
+    charities: []
   });
 
 // 
 // Provider is part of the ContextAPI
 // it gives child components power to consume
 // values provided by context.
-// Value prop passes data or objects
-// to Provider, then made available
-// to all child components.
+// `...props` passes data or objects
+// to Provider, then to children.
 //
   return <Provider value={[state, dispatch]} {...props} />;
 };

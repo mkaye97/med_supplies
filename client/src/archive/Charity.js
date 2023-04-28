@@ -16,9 +16,9 @@ import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import ItemCard from './ItemCard';
+import ItemCard from '../components/ItemCard';
 import Nav from './Nav';
-import CartModal from './CartModal';
+import CartModal from '../components/CartModal';
 
 const theme = createTheme();
 
