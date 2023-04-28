@@ -39,7 +39,7 @@ const dateScalar = new GraphQLScalarType({
 //=========================================================================
 
 const resolvers = {
-  
+
   Date: dateScalar,
   Query: {
     categories: async () => {
@@ -50,21 +50,21 @@ const resolvers = {
      Description: Resolvers for Charity, Donation, and Rental models
      Added the following lines
     */
-     charities: async () => {
-       return await Charity.find({});
-     },
+    charities: async () => {
+      return await Charity.find({});
+    },
 
-     rentals: async () => {
-       return await Rental.find({});
-     },
+    rentals: async () => {
+      return await Rental.find({});
+    },
 
-     donations: async () => {
-       return await Donation.find({});
-     },
+    donations: async () => {
+      return await Donation.find({});
+    },
 
-     /*
-     End of new lines added
-     */
+    /*
+    End of new lines added
+    */
 
     products: async (parent, { category, name }) => {
       const params = {};
@@ -178,8 +178,8 @@ const resolvers = {
 
       return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
     },
-    login: async (parent, { username, password }) => {
-      const user = await User.findOne({ username });
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
 
       if (!user) {
         throw new AuthenticationError('Incorrect credentials');
@@ -195,20 +195,20 @@ const resolvers = {
 
       return { token, user };
     },
-     /* 
-     Author: Uchenna Obicheta
-     Description: Mutation for Donation model
-     Added the following lines
-    */
-    addDonation: async(parent, { input }) => {
+    /* 
+    Author: Uchenna Obicheta
+    Description: Mutation for Donation model
+    Added the following lines
+   */
+    addDonation: async (parent, { input }) => {
 
-    const { amount, user_id, charity_id } = input;
+      const { amount, user_id, charity_id } = input;
 
-    const newDonation = await Donation.create({
-           amount,
-           user_id,
-           charity_id
-          });
+      const newDonation = await Donation.create({
+        amount,
+        user_id,
+        charity_id
+      });
 
       return newDonation;
 

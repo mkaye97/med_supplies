@@ -66,7 +66,7 @@ export default function Nav() {
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/signup">About Us</a>
+                                <a className="nav-link" href="/about">About Us</a>
                             </li>
                         </ul>
 
