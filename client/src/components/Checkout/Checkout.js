@@ -1,22 +1,24 @@
-import React, { useState } from 'react';
-import Checkout from './Checkout';
-import Card from './Card';
+import React from 'react';
 
-const Cart = ({ products }) => {
-  const [cartItems, setCartItems] = useState([]);
-
-  const addToCart = (product) => {
-    setCartItems([...cartItems, product]);
-  };
-
+const Cart = ({ items }) => {
   return (
-    <div>
-      <div className="products-container">
-        {products.map((product) => (
-          <Card key={product.id} product={product} addToCart={addToCart} />
-        ))}
+    <div className="cart">
+      <div className="cart-header">
+        <h3>Cart</h3>
+        <span className="cart-count">{items.length}</span>
       </div>
-      {cartItems.length > 0 && <Checkout cartItems={cartItems} />}
+      <ul className="cart-items">
+        {items.map((item) => (
+          <li key={item.id}>
+            <div className="cart-item">
+              <div className="cart-item-details">
+                <span>{item.name}</span>
+                <span>${item.price}</span>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
