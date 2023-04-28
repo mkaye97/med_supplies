@@ -99,17 +99,17 @@ export default function About() {
             <div className="col-lg-4 mb-4" key={index}>
               <div className="avatar"></div>
 
-                <h2 className="fw-normal">{founder.name}</h2>
-              
-                <p>{founder.description}</p>
-                <p>
-                  <a className="btn btn-secondary" href={founder.github} target="_blank" rel="noreferrer">
-                    View GitHub &raquo;
-                  </a>
-                </p>
-              
+              <h2 className="fw-normal">{founder.name}</h2>
+
+              <p>{founder.description}</p>
+              <p>
+                <a className="btn btn-secondary" href={founder.github} target="_blank" rel="noreferrer">
+                  View GitHub &raquo;
+                </a>
+              </p>
+
             </div>
-            
+
           ))}
         </div>
 
@@ -125,22 +125,7 @@ export default function About() {
             </p>
           </div>
           <div className="col-md-5">
-            <svg
-              className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              width="500"
-              height="500"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: 500x500"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#eee" />
-              <text x="50%" y="50%" fill="#aaa" dy=".3em">
-                500x500
-              </text>
-            </svg>
+            <div className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto about-img-01"></div>
           </div>
         </div>
 
@@ -156,22 +141,7 @@ export default function About() {
             </p>
           </div>
           <div className="col-md-5 order-md-1">
-            <svg
-              className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              width="500"
-              height="500"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: 500x500"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#eee" />
-              <text x="50%" y="50%" fill="#aaa" dy=".3em">
-                500x500
-              </text>
-            </svg>
+            <div className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto about-img-02"></div>
           </div>
         </div>
 
@@ -187,22 +157,7 @@ export default function About() {
             </p>
           </div>
           <div className="col-md-5">
-            <svg
-              className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              width="500"
-              height="500"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: 500x500"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#eee" />
-              <text x="50%" y="50%" fill="#aaa" dy=".3em">
-                500x500
-              </text>
-            </svg>
+            <div className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto about-img-03"></div>
           </div>
         </div>
 

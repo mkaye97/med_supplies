@@ -42,3 +42,31 @@
     position: relative;
     left: 130px;
 }
+
+
+.about-img-01 {
+    background-image: url('../../public/images/bd-img-02.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 500px;
+    height: 500px;
+}
+
+.about-img-02 {
+    background-image: url('../../public/images/bd-img-03.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 500px;
+    height: 500px;
+}
+
+.about-img-03 {
+    background-image: url('../../public/images/bd-img-01.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 500px;
+    height: 500px;
+}
