@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
+import './signup.css';
 
 
 export default function Signup(props) {
@@ -35,7 +36,7 @@ export default function Signup(props) {
 
     return (
         <main className="container">
-            <div className="p-4 p-md-5 mb-4 rounded text-bg-dark" style={{ height: '25em' }}>
+            <div className="p-4 p-md-5 mb-4 rounded text-bg-light signup-bg" style={{ height: '25em' }}>
                 <div className="col-md-6 px-0">
                     <h1 className="display-4 fst-italic">Sign Up</h1>
                     <p className="lead my-3"></p>

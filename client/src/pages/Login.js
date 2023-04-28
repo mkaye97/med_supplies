@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
+import './login.css';
 
 
 export default function Login(props) {
@@ -32,7 +33,7 @@ export default function Login(props) {
 
     return (
         <main className="container">
-            <div className="p-4 p-md-5 mb-4 rounded text-bg-dark" style={{ height: '25em' }}>
+            <div className="p-4 p-md-5 mb-4 rounded text-bg-dark login-bg-img" style={{ height: '25em' }}>
                 <div className="col-md-6 px-0">
                     <h1 className="display-4 fst-italic">Login</h1>
                     <p className="lead my-3"></p>
