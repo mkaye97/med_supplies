@@ -20,7 +20,7 @@ export default function Nav() {
                                 <Link className="nav-link" to="/home">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/domation">Make Link Donation</Link>
+                                <Link className="nav-link" to="/domation">Make a Donation</Link>
                             </li>
                             <li className="nav-item dropdown">
                                 <Link className="nav-link" to="/products" aria-expanded="false">
@@ -31,10 +31,10 @@ export default function Nav() {
                                 <Link className="nav-link" to="/dashboard">Dashboard</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/signup">About Us</Link>
+                                <Link className="nav-link" to="/about">About Us</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="#">Logout</Link>
+                                <Link className="nav-link" to="#" onClick={() => Auth.logout()}>Logout</Link>
                             </li>
 
                         </ul>
