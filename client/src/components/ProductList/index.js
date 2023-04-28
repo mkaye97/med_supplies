@@ -6,6 +6,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import spinner from '../../assets/spinner.gif';
+import './index.css';
 
 function ProductList() {
     const [state, dispatch] = useStoreContext();
@@ -47,17 +48,20 @@ function ProductList() {
         <div className="my-2">
             <h2>Our Products:</h2>
             {state.products.length ? (
-                <div className="flex-row">
+                <div className="container">
+                  <div className="row">
                     {filterProducts().map((product) => (
-                        <ProductItem
-                            key={product._id}
-                            _id={product._id}
-                            image={product.image}
-                            name={product.name}
-                            price={product.price}
-                            quantity={product.quantity}
-                        />
+                        <div className="col-12 col-sm-6 col-md-4" key={product._id}>
+                            <ProductItem
+                                _id={product._id}
+                                image={product.image}
+                                name={product.name}
+                                price={product.price}
+                                quantity={product.quantity}
+                            />
+                        </div>
                     ))}
+                  </div>
                 </div>
             ) : (
                 <h3>You haven't added any products yet!</h3>

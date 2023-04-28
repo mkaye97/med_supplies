@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     height: 'auto',
   },
   medhubpaper: {
-    marginTop: '20%',
+    marginTop: '15%',
     marginBottom: '5%'
   }
 }));
