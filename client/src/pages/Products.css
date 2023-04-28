@@ -23,6 +23,31 @@
 .image {
     height: 50%;
     width: 50%;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     /* padding:2px; */
+    justify-self: center;
+    align-self: center;
+}
+/* .img-container {
+    
+} */
+.card-name{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
+}
+.card-description{
+    font-size: 1rem;
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
+}
+.card-price{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
 }

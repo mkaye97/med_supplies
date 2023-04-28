@@ -4,10 +4,12 @@ const Card = ({ product }) => {
     return (
         <div className="card-container">
         <div key={product.id} className = "product-card">
+            <div className="img-container">
           <img className="image" src={product.image} alt={product.name} />
-          <h2>{product.name}</h2>
-          <p>{product.description}</p>
-          <p>Price: ${product.price}</p>
+            </div>
+          <div className="card-name">{product.name}</div>
+          <div className="card-description">{product.description}</div>
+          <div className="card-price">Price: ${product.price}</div>
           <button>Add to cart</button>
         </div>
         </div>
