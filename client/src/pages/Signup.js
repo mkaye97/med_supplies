@@ -53,7 +53,7 @@ export default function Signup(props) {
 
                     <form onSubmit={handleFormSubmit}>
                         <div className="row mb-3">
-                            <label forHtml="firstName" className="col-sm-2 col-form-label">First Name</label>
+                            <label className="col-sm-2 col-form-label">First Name</label>
                             <div className="col-sm-6">
                                 <input type="text" className="form-control" name="firstName"
                                     id="firstName"
@@ -61,7 +61,7 @@ export default function Signup(props) {
                             </div>
                         </div>
                         <div className="row mb-3">
-                            <label forHtml="inputLastname3" className="col-sm-2 col-form-label">Last Name</label>
+                            <label className="col-sm-2 col-form-label">Last Name</label>
                             <div className="col-sm-6">
                                 <input type="text" className="form-control" name="lastName"
                                     id="lastName"
@@ -69,7 +69,7 @@ export default function Signup(props) {
                             </div>
                         </div>
                         <div className="row mb-3">
-                            <label forHtml="inputEmail3" className="col-sm-2 col-form-label">Email</label>
+                            <label className="col-sm-2 col-form-label">Email</label>
                             <div className="col-sm-6">
                                 <input type="email" className="form-control" placeholder="youremail@test.com"
                                     name="email"
@@ -78,7 +78,7 @@ export default function Signup(props) {
                             </div>
                         </div>
                         <div className="row mb-3">
-                            <label forHtml="inputPassword3" className="col-sm-2 col-form-label">Password</label>
+                            <label className="col-sm-2 col-form-label">Password</label>
                             <div className="col-sm-6">
                                 <input type="password" className="form-control" placeholder="******"
                                     name="password"
