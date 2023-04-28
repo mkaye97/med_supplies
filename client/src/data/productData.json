@@ -276,7 +276,7 @@
         "id": 22,
         "name": "HiccAway straw",
         "description": "The only drug free, reusable natural cure for hiccups is available in Single Packs",
-        "image": "../images/sharktankhicc.jpg",
+        "image": "../images/sharktankhicc.jpeg",
         "price": 11.99,
         "quantity": 20,
         "category": "Devices",
