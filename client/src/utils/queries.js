@@ -147,6 +147,15 @@ export const GET_RENTALS = gql`
   }
 `;
 
+export const QUERY_CATEGORIES = gql`
+  {
+    categories {
+      _id
+      name
+    }
+  }
+`;
+
 export const GET_DONATIONS = gql`
   query donations {
     donations {

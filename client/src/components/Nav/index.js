@@ -20,7 +20,9 @@ export default function Nav() {
                                 <Link className="nav-link" to="/home">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/domation">Make a Donation</Link>
+                                <Link className="nav-link" to="/orderHistory">
+                                    Order History
+                                </Link>
                             </li>
                             <li className="nav-item dropdown">
                                 <Link className="nav-link" to="/products" aria-expanded="false">

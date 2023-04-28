@@ -1,7 +1,7 @@
 const db = require('../config/connection');
 const { User, Category, Charity, Product } = require('../models');
 const charitiesData = require('./charitiesData.json');
-const mongoose = require('mongoose');
+//const mongoose = require('mongoose');
 
 db.once('open', async () => {
   try {
@@ -22,7 +22,7 @@ db.once('open', async () => {
 
 
     await Product.deleteMany({});
-  const products =  await Product.insertMany([
+    const products = await Product.insertMany([
       {
         name: "First Aid Kit(216 Pieces)",
         description: "A comprehensive first aid kit containing 216 essential items for emergency situations.",
@@ -350,9 +350,9 @@ db.once('open', async () => {
     await User.deleteMany();
 
     await User.create({
-      firstName: 'Lance',
-      lastName: 'Anozie',
-      email: 'lanozie@hotmail.com',
+      firstName: 'John',
+      lastName: 'Doe',
+      email: 'jdoe@gmail.com',
       password: 'welcome123',
       orders: [
         {
@@ -362,9 +362,9 @@ db.once('open', async () => {
     });
 
     await User.create({
-      firstName: 'John',
-      lastName: 'Doe',
-      email: 'jdoe@gmail.com',
+      firstName: 'Lance',
+      lastName: 'Anozie',
+      email: 'lanozie@gmail.com',
       password: 'welcome123'
     });
 
