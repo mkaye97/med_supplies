@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
+import './order_history_banner.css';
 
 import { Container, Grid, Card, CardContent, CardMedia, Typography, Box } from '@mui/material';
 
@@ -15,9 +16,16 @@ function OrderHistory() {
 
   return (
     <>
+      <div className="p-4 p-md-5 mb-4 rounded text-bg-dark order-history-bg-img" style={{ height: '20em' }}>
+        <div className="col-md-2 px-0">
+          <h1 className="display-4 fst-italic">Order History</h1>
+          <p className="lead my-3"></p>
+        </div>
+      </div>
+      
       <Container>
         <Box my={4}>
-          <Link to="/">← Back to Products</Link>
+          <Link to="/products">← Back to Products</Link>
         </Box>
 
         {user ? (
