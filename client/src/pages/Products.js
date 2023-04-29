@@ -1,21 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import productData from '../data/productData.json';
-import './Products.css';
-import Card from '../components/Cards/Card';
+import React from "react";
+import ProductList from "../components/ProductList";
+import CategoryMenu from "../components/CategoryMenu";
+import Cart from "../components/Cart";
 
 const Products = () => {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    setProducts(productData);
-}, []);
-
-
-
-return (
-  <div className="product-container">
-    {products.map((product) => <Card product = {product} />)}
-  </div>
-);
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="col-12 pt-5">
+          <div className="text-center category-menu">
+            <CategoryMenu />
+          </div>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-12 col-md-6 offset-md-3">
+          <ProductList />
+        </div>
+        <div className="col-12 col-md-3">
+          <Cart />
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Products;

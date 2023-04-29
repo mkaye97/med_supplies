@@ -2,6 +2,7 @@ import * as React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Container, Typography, Paper } from '@material-ui/core';
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.dark,
@@ -46,16 +47,17 @@ const useStyles = makeStyles((theme) => ({
     height: 'auto',
   },
   medhubpaper: {
-    marginTop: '20%',
+    marginTop: '15%',
     marginBottom: '5%'
   }
 }));
+
 export default function Home() {
   const classes = useStyles();
   return (
     <Container maxWidth="md" className={classes.root}>
       <div className={classes.content}>
-        <Paper className={classes.medhubpaper} elevation='24'>
+        <Paper className={classes.medhubpaper} elevation={24}>
             <img className={classes.image} src='images/MedHub.png'/>
         </Paper>
         <Typography variant="h1" className={classes.title}>
