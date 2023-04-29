@@ -50,13 +50,13 @@ export default function Login(props) {
 
                     <form onSubmit={handleFormSubmit}>
                         <div className="row mb-3" style={{ marginTop: '4em', marginBottom: '2em' }}>
-                            <label forHtml="inputEmail3" className="col-sm-2 col-form-label">Email</label>
+                            <label className="col-sm-2 col-form-label">Email</label>
                             <div className="col-sm-6">
                                 <input type="email" name="email" className="form-control" id="inputEmail3" onChange={handleChange} placeholder="youremail@test.com" />
                             </div>
                         </div>
                         <div className="row mb-3">
-                            <label forHtml="inputPassword3" className="col-sm-2 col-form-label">Password</label>
+                            <label className="col-sm-2 col-form-label">Password</label>
                             <div className="col-sm-6">
                                 <input type="password" name="password" className="form-control" id="inputPassword3" onChange={handleChange} placeholder="******" />
                             </div>

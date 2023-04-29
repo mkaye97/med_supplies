@@ -51,13 +51,14 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '5%'
   }
 }));
+
 export default function Home() {
   const classes = useStyles();
   return (
     <Container maxWidth="md" className={classes.root}>
       <div className={classes.content}>
-        <Paper className={classes.medhubpaper} elevation='24'>
-            <img className={classes.image} src='images/MedHub.png' alt="Some dope looking stuff"/>
+        <Paper className={classes.medhubpaper} elevation={24}>
+            <img className={classes.image} src='images/MedHub.png'/>
         </Paper>
         <Typography variant="h1" className={classes.title}>
           Welcome to MedHub!
