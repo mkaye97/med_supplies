@@ -6,6 +6,8 @@ import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import spinner from '../../assets/spinner.gif';
+import {Grid} from '@mui/material';
+
 import './index.css';
 
 function ProductList() {
@@ -46,39 +48,27 @@ function ProductList() {
 
     return (
         <div className="my-2">
-   
-            <h2>Our Products:</h2>
-            {state.products.length ? (
-                <div className="card-deck">
-                <div className="container">
-                  
-                  <div className="row">
-                     
-                       
-                    {filterProducts().map((product) => (
-                      
-                        <div className="col-3" key={product._id} >
-                        
-                            <ProductItem
-                                _id={product._id}
-                                image={product.image}
-                                name={product.name}
-                                price={product.price}
-                                quantity={product.quantity}
-                            />
-                            </div>
-                        
-                        
-                    ))}
-                        </div>
-                   </div>
-                </div>
-            ) : (
-                <h3>You haven't added any products yet!</h3>
-            )}
-            {loading ? <img src={spinner} alt="loading" /> : null}
+          <h2>Our Products:</h2>
+          {state.products.length ? (
+            <Grid container spacing={2} style={{ width: "100%" }}>
+              {filterProducts().map((product) => (
+                <Grid item xs={12} sm={6} md={4} lg={3} key={product._id}>
+                  <ProductItem
+                    _id={product._id}
+                    image={product.image}
+                    name={product.name}
+                    price={product.price}
+                    quantity={product.quantity}
+                  />
+                </Grid>
+              ))}
+            </Grid>
+          ) : (
+            <h3>You haven't added any products yet!</h3>
+          )}
+          {loading ? <img src={spinner} alt="loading" /> : null}
         </div>
-    );
+      );
 }
 
 export default ProductList;
