@@ -90,14 +90,16 @@ export default function About() {
         <div className="row mt-4">
           {/* Replace the names, descriptions, and GitHub repo links for each founder */}
           {[
-            { name: "Uchenna Obicheta", description: "Backend Boss", github: "https://github.com/uobie80" },
-            { name: "Matthew Kaye", description: "Front-End Fighter", github: "https://github.com/mkaye97" },
-            { name: "Gavin Price", description: "Functionality Frontiersman", github: "https://github.com/RealGavinPrice" },
-            { name: "Abdiel Villalobos", description: "Style Star", github: "https://github.com/ablobos" },
-            { name: "Seiya Miyazaki", description: "React Rebel", github: "https://github.com/samiyazaki" },
+            { name: "Matthew Kaye", description: "Front-End Fighter", github: "https://github.com/mkaye97", imageName: "matt.png" },
+            { name: "Gavin Price", description: "Functionality Frontiersman", github: "https://github.com/RealGavinPrice", imageName: "gavin.jpeg" },
+            { name: "Abdiel Villalobos", description: "Style Star", github: "https://github.com/ablobos", imageName: "ab.jpg" },
+            { name: "Uchenna Obicheta", description: "Backend Boss", github: "https://github.com/uobie80", imageName: "avatar-circle.png" },
+            { name: "Seiya Miyazaki", description: "React Rebel", github: "https://github.com/samiyazaki", imageName: "seiya.jpeg" },
           ].map((founder, index) => (
             <div className="col-lg-4 mb-4" key={index}>
-              <div className="avatar"></div>
+              <div className="avatar">
+              <img src={`/images/${founder.imageName}`} alt="Founder" className="founder-image" />
+              </div>
 
               <h2 className="fw-normal">{founder.name}</h2>
 

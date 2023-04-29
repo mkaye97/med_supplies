@@ -4,12 +4,8 @@ import { pluralize } from "../../utils/helpers"
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
+import { Card, CardActionArea, CardContent, CardMedia, Typography, Button } from '@material-ui/core';
+
 // import './index.css';
 
 
@@ -48,54 +44,34 @@ function ProductItem(item) {
     }
 
     return (
-        <Grid item xs={12} sm={6} md={4} lg={3} key={_id}>
-          <Card sx={{ width: '100%', height: '100%', marginBottom: '20px' }}>
-            <Link to={`/products/${_id}`}>
-              <CardMedia
-                component="img"
-                image={`/images/${image}`}
-                alt={name}
-                sx={{ width: '100%', maxHeight: '200px', objectFit: 'contain' }}
-              />
-            </Link>
-            <CardContent>
-              <Typography
-                gutterBottom
-                variant="h6"
-                component="div"
-                sx={{ height: '40px' }}
-                noWrap
-              >
-                {name}
-              </Typography>
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                sx={{ height: '40px' }}
-              >
-                <span>${price}</span>
-              </Typography>
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                sx={{ height: '20px' }}
-              >
-                <small>
-                  {quantity} {pluralize('item', quantity)} in stock
-                </small>
-              </Typography>
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={addToCart}
-                sx={{ marginTop: '10px' }}
-              >
-                Add to cart
-              </Button>
-            </CardContent>
-          </Card>
-        </Grid>
+        <Card key={_id} style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+          <CardActionArea component={Link} to={`/products/${_id}`}>
+            <CardMedia
+              component="img"
+              alt={name}
+              height="200"
+              image={`/images/${image}`}
+              title={name}
+            />
+          </CardActionArea>
+          <CardContent style={{ flexGrow: 1 }}>
+            <Typography gutterBottom variant="h6" component="h2">
+              {name}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              <span>${price}</span>
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              <small>
+                {quantity} {pluralize('item', quantity)} in stock
+              </small>
+            </Typography>
+          </CardContent>
+          <Button variant="contained" color="primary" onClick={addToCart} style={{ margin: '8px' }}>
+            Add to cart
+          </Button>
+        </Card>
       );
-}
+    }
 
 export default ProductItem;
