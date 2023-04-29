@@ -41,22 +41,20 @@ function ProductItem(item) {
     }
 
     return (
-        <div className="card-container">
-          <Link to={`/products/${_id}`}>
-            <img alt={name} src={`/images/${image}`} className="image" />
-            <p>{name}</p>
-          </Link>
-          <div className="card-content">
-            <div>
-              <div>
-                {quantity} {pluralize("item", quantity)} in stock
-              </div>
-              <span>${price}</span>
+
+        <div className="card" key={_id} style={{ width: '260px', height: '400px', marginBottom: '20px' }}>
+            <Link to={`/products/${_id}`}>
+                <img className="card-img-top" src={`/images/${image}`} alt="Card image cap" style={{ width: '260px', height: '200px' }} />
+            </Link>
+            <div className="card-body">
+                <h6 className="card-title">{name}</h6>
+                <p className="card-text"> <span>${price}</span></p>
+                <p className="card-text"><small class="text-muted">{quantity} {pluralize("item", quantity)} in stock</small></p>
+                <button className="btn btn-primary" onClick={addToCart}>Add to cart</button>
             </div>
-            <button onClick={addToCart}>Add to cart</button>
-          </div>
         </div>
-      );
-    }
+
+    );
+}
 
 export default ProductItem;

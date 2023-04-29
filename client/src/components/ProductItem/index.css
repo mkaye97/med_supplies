@@ -1,23 +1,23 @@
 .card-container {
-    height: 450px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    transition: 0.3s;
-  }
-  
-  .image {
-    height: 60%;
-    width: 100%;
-    object-fit: contain;
-  }
-  
-  .card-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
+}
+
+.image {
+  height: 60%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

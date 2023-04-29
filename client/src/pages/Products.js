@@ -25,9 +25,9 @@ const Products = () => {
         </div>
       </div>
       <div className="row">
-        <div className="col-12 col-md-6 offset-md-3">
+       
           <ProductList />
-        </div>
+       
         <div className="col-12 col-md-3">
           <Cart />
         </div>

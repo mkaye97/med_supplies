@@ -96,7 +96,7 @@ const Cart = () => {
 
                         {/* Check to see if the user is logged in. If so render a button to check out */}
                         {Auth.loggedIn() ? (
-                            <button onClick={submitCheckout}>Checkout</button>
+                            <button className="btn btn-primary" onClick={submitCheckout}>Checkout</button>
                         ) : (
                             <span>(log in to check out)</span>
                         )}
