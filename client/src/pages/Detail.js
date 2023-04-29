@@ -13,6 +13,7 @@ import {
 import { QUERY_PRODUCTS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
 import spinner from '../assets/spinner.gif';
+import './detail.css'
 
 function Detail() {
     const [state, dispatch] = useStoreContext();
@@ -84,8 +85,16 @@ function Detail() {
     return (
         <>
             {currentProduct && cart ? (
-                <div className="container my-1">
-                    <Link to="/">← Back to Products</Link>
+
+                <div className="container">
+                    <div className="p-4 p-md-5 mb-4 rounded text-bg-dark detail-bg-img" style={{ height: '20em' }}>
+                        <div className="col-md-4 px-0">
+                            <h1 className="display-4 fst-italic">Product Details</h1>
+                            <p className="lead my-3"></p>
+
+                        </div>
+                    </div>
+                    <Link to="/products" className="btn btn-light">← Back to Products</Link>
 
                     <h2>{currentProduct.name}</h2>
 
