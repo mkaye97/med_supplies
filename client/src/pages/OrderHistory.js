@@ -1,52 +1,66 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 
+import { Container, Grid, Card, CardContent, CardMedia, Typography, Box } from '@mui/material';
+
 function OrderHistory() {
-    const { data } = useQuery(QUERY_USER);
-    let user;
+  const { data } = useQuery(QUERY_USER);
+  let user;
 
-    if (data) {
-        user = data.user;
-    }
+  if (data) {
+    user = data.user;
+  }
 
-    return (
-        <>
-            <div className="container my-1">
-                <Link to="/">← Back to Products</Link>
+  return (
+    <>
+      <Container>
+        <Box my={4}>
+          <Link to="/">← Back to Products</Link>
+        </Box>
 
-                {user ? (
-                    <>
-                        <h2>
-                            Order History for {user.firstName} {user.lastName}
-                        </h2>
-                        {user.orders.map((order) => (
-                            <div key={order._id} className="my-2">
-                                <h3>
-                                    {new Date(parseInt(order.purchaseDate)).toLocaleDateString()}
-                                </h3>
-                                <div className="flex-row">
-                                    {order.products.map(({ _id, image, name, price }, index) => (
-                                        <div key={index} className="card px-1 py-1">
-                                            <Link to={`/products/${_id}`}>
-                                                <img alt={name} src={`/images/${image}`} />
-                                                <p>{name}</p>
-                                            </Link>
-                                            <div>
-                                                <span>${price}</span>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        ))}
-                    </>
-                ) : null}
-            </div>
-        </>
-    );
+        {user ? (
+          <>
+            <Typography variant="h4" gutterBottom>
+              Order History for {user.firstName} {user.lastName}
+            </Typography>
+            {user.orders.map((order) => (
+              <Box key={order._id} my={4}>
+                <Typography variant="h6" gutterBottom>
+                  {new Date(parseInt(order.purchaseDate)).toLocaleDateString()}
+                </Typography>
+                <Grid container spacing={4}>
+                  {order.products.map(({ _id, image, name, price }, index) => (
+                    <Grid key={index} item xs={12} sm={6} md={4}>
+                      <Card>
+                        <Link to={`/products/${_id}`}>
+                          <CardMedia
+                            component="img"
+                            height="140"
+                            image={`/images/${image}`}
+                            alt={name}
+                          />
+                          <CardContent>
+                            <Typography variant="h6" component="div">
+                              {name}
+                            </Typography>
+                          </CardContent>
+                        </Link>
+                        <Box sx={{ p: 2 }}>
+                          <Typography variant="subtitle1">${price}</Typography>
+                        </Box>
+                      </Card>
+                    </Grid>
+                  ))}
+                </Grid>
+              </Box>
+            ))}
+          </>
+        ) : null}
+      </Container>
+    </>
+  );
 }
 
 export default OrderHistory;

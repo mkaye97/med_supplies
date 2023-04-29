@@ -31,7 +31,7 @@
 }
 
 
-.avatar {
+/* .avatar {
 
     background-image: url('../../public/images/avatar-circle.png');
     background-size: cover;
@@ -41,8 +41,14 @@
     height: 140px;
     position: relative;
     left: 130px;
-}
+} */
 
+.founder-image {
+    width: 350px;
+    height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 
 .about-img-01 {
     background-image: url('../../public/images/bd-img-02.png');
