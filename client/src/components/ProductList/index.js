@@ -46,12 +46,19 @@ function ProductList() {
 
     return (
         <div className="my-2">
+   
             <h2>Our Products:</h2>
             {state.products.length ? (
+                <div className="card-deck">
                 <div className="container">
+                  
                   <div className="row">
+                     
+                       
                     {filterProducts().map((product) => (
-                        <div className="col-12 col-sm-6 col-md-4" key={product._id}>
+                      
+                        <div className="col-3" key={product._id} >
+                        
                             <ProductItem
                                 _id={product._id}
                                 image={product.image}
@@ -59,9 +66,12 @@ function ProductList() {
                                 price={product.price}
                                 quantity={product.quantity}
                             />
-                        </div>
+                            </div>
+                        
+                        
                     ))}
-                  </div>
+                        </div>
+                   </div>
                 </div>
             ) : (
                 <h3>You haven't added any products yet!</h3>

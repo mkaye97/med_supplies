@@ -1,0 +1,6 @@
+.product-bg-img {
+    background-image: url('../../public/images/medical_products_01.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
