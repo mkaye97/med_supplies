@@ -4,7 +4,14 @@ import { pluralize } from "../../utils/helpers"
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
-import './index.css';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
+// import './index.css';
+
 
 function ProductItem(item) {
     const [state, dispatch] = useStoreContext();
@@ -41,20 +48,54 @@ function ProductItem(item) {
     }
 
     return (
-
-        <div className="card" key={_id} style={{ width: '260px', height: '400px', marginBottom: '20px' }}>
+        <Grid item xs={12} sm={6} md={4} lg={3} key={_id}>
+          <Card sx={{ width: '100%', height: '100%', marginBottom: '20px' }}>
             <Link to={`/products/${_id}`}>
-                <img className="card-img-top" src={`/images/${image}`} alt="Card image cap" style={{ width: '260px', height: '200px' }} />
+              <CardMedia
+                component="img"
+                image={`/images/${image}`}
+                alt={name}
+                sx={{ width: '100%', maxHeight: '200px', objectFit: 'contain' }}
+              />
             </Link>
-            <div className="card-body">
-                <h6 className="card-title">{name}</h6>
-                <p className="card-text"> <span>${price}</span></p>
-                <p className="card-text"><small class="text-muted">{quantity} {pluralize("item", quantity)} in stock</small></p>
-                <button className="btn btn-primary" onClick={addToCart}>Add to cart</button>
-            </div>
-        </div>
-
-    );
+            <CardContent>
+              <Typography
+                gutterBottom
+                variant="h6"
+                component="div"
+                sx={{ height: '40px' }}
+                noWrap
+              >
+                {name}
+              </Typography>
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ height: '40px' }}
+              >
+                <span>${price}</span>
+              </Typography>
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ height: '20px' }}
+              >
+                <small>
+                  {quantity} {pluralize('item', quantity)} in stock
+                </small>
+              </Typography>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={addToCart}
+                sx={{ marginTop: '10px' }}
+              >
+                Add to cart
+              </Button>
+            </CardContent>
+          </Card>
+        </Grid>
+      );
 }
 
 export default ProductItem;

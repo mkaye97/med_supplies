@@ -3,6 +3,8 @@ import ProductList from "../components/ProductList";
 import CategoryMenu from "../components/CategoryMenu";
 import Cart from "../components/Cart";
 import './product_banner.css';
+import './Products.css';
+
 
 const Products = () => {
   return (
