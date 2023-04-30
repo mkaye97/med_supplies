@@ -36,31 +36,12 @@ import {
         products: [...action.products],
       };
 
-      case ADD_TO_CART:
-        let existingCartItemIndex = state.cart.findIndex(
-          (item) => item._id === action.product._id
-        );
-      
-        if (existingCartItemIndex !== -1) {
-          const updatedCart = [...state.cart];
-          updatedCart[existingCartItemIndex] = {
-            ...updatedCart[existingCartItemIndex],
-            purchaseQuantity:
-              updatedCart[existingCartItemIndex].purchaseQuantity + 1,
-          };
-      
-          return {
-            ...state,
-            cartOpen: true,
-            cart: updatedCart,
-          };
-        } else {
-          return {
-            ...state,
-            cartOpen: true,
-            cart: [...state.cart, { ...action.product, purchaseQuantity: 1 }],
-          };
-        }
+    case ADD_TO_CART:
+      return {
+        ...state,
+        cartOpen: true,
+        cart: [...state.cart, action.product],
+      };
 
     case ADD_MULTIPLE_TO_CART:
       return {
