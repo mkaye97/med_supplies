@@ -87,9 +87,9 @@ const Cart = () => {
             <h2>Shopping Cart</h2>
             {state.cart.length ? (
                 <div>
-                    {state.cart.map((item) => (
-                        <CartItem key={item._id} item={item} />
-                    ))}
+                    {state.cart.map((item, index) => (
+                    <CartItem key={`${item._id}-${index}`} item={item} />
+                        ))}
 
                     <div className="flex-row space-between">
                         <strong>Total: ${calculateTotal()}</strong>
