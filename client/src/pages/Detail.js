@@ -52,35 +52,48 @@ function Detail() {
         }
     }, [products, data, loading, dispatch, id]);
 
+    useEffect(() => {
+        const updatedProduct = products.find((product) => product._id === id);
+        if (updatedProduct) {
+          setCurrentProduct(updatedProduct);
+        }
+      }, [cart, products, id]);
     const addToCart = () => {
         const itemInCart = cart.find((cartItem) => cartItem._id === id);
         if (itemInCart) {
-            dispatch({
-                type: UPDATE_CART_QUANTITY,
-                _id: id,
-                purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
-            });
-            idbPromise('cart', 'put', {
-                ...itemInCart,
-                purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
-            });
+          dispatch({
+            type: UPDATE_CART_QUANTITY,
+            _id: id,
+            purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
+          });
+          idbPromise('cart', 'put', {
+            ...itemInCart,
+            purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
+          });
         } else {
-            dispatch({
-                type: ADD_TO_CART,
-                product: { ...currentProduct, purchaseQuantity: 1 },
-            });
-            idbPromise('cart', 'put', { ...currentProduct, purchaseQuantity: 1 });
+          dispatch({
+            type: ADD_TO_CART,
+            product: { ...currentProduct, purchaseQuantity: 1 },
+          });
+          idbPromise('cart', 'put', { ...currentProduct, purchaseQuantity: 1 });
         }
-    };
-
-    const removeFromCart = () => {
+        console.log('New quantity:', currentProduct.quantity - 1);
+      
+        // Decrement stock count
+        setCurrentProduct({ ...currentProduct, quantity: currentProduct.quantity - 1 });
+      };
+      
+      const removeFromCart = () => {
         dispatch({
-            type: REMOVE_FROM_CART,
-            _id: currentProduct._id,
+          type: REMOVE_FROM_CART,
+          _id: currentProduct._id,
         });
-
+      
         idbPromise('cart', 'delete', { ...currentProduct });
-    };
+      
+        // Increment stock count
+        setCurrentProduct({ ...currentProduct, quantity: currentProduct.quantity + 1 });
+      };
 
     return (
         <>
@@ -94,7 +107,7 @@ function Detail() {
 
                         </div>
                     </div>
-                    <Link to="/products" className="btn btn-light">← Back to Products</Link>
+                    <Link to="/products" className="btn btn-primary back-to-products">← Back to Products</Link>
                 
                     <div className="detail-content">
     <h2>{currentProduct.name}</h2>
@@ -103,7 +116,11 @@ function Detail() {
   <strong>Price:</strong>${currentProduct.price}{' '}
 </p>
 <div className="button-container">
-  <button className="btn btn-primary" onClick={addToCart}>
+  <button
+    className="btn btn-primary"
+    onClick={addToCart}
+    disabled={currentProduct.quantity === 0}
+  >
     Add to Cart
   </button>
   <button
@@ -114,6 +131,9 @@ function Detail() {
     Remove from Cart
   </button>
 </div>
+<p>
+  <strong>Stock:</strong> {currentProduct.quantity}
+</p>
     <img
         className="product-image"
         src={`/images/${currentProduct.image}`}
