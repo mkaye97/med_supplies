@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Button, Container, Typography, Paper } from '@material-ui/core';
+import { Container, Typography, Paper } from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -39,18 +39,18 @@ const useStyles = makeStyles((theme) => ({
       marginRight: 'auto',
     },
   },
-  button: {
-    marginTop: theme.spacing(2),
-    [theme.breakpoints.down('sm')]: {
-      display: 'none',
-    },
-  },
+  // button: {
+  //   marginTop: theme.spacing(2),
+  //   [theme.breakpoints.down('sm')]: {
+  //     display: 'none',
+  //   },
+  // },
   image: {
     width: '100%',
     height: 'auto',
   },
   medhubpaper: {
-    marginTop: '15%',
+    marginTop: '5%',
     marginBottom: '5%'
   }
 }));
@@ -69,11 +69,11 @@ export default function Home() {
         <Typography variant="h6" className={classes.lead}>
           Please visit the Products Page to start your personal medical supply order!
         </Typography>
-        <div className={classes.button}>
+        {/* <div className={classes.button}>
           <Button href="/products" variant="contained" color="secondary" size="large" className={classes.button}>
             View Products
           </Button>
-        </div>
+        </div> */}
       </div>
     </Container>
   );
