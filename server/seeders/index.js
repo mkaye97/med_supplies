@@ -356,7 +356,90 @@ db.once('open', async () => {
       password: 'welcome123',
       orders: [
         {
-          products: [products[0]._id, products[0]._id, products[1]._id]
+          products: [products[2]._id, products[3]._id, products[4]._id]
+        }
+      ]
+    });
+
+    await User.create({
+      firstName: 'user02',
+      lastName: 'user02',
+      email: 'user02@gmail.com',
+      password: 'welcome123',
+      orders: [
+        {
+          products: [products[8]._id, products[9]._id, products[9]._id]
+        }
+      ]
+    });
+
+    await User.create({
+      firstName: 'user03',
+      lastName: 'user03',
+      email: 'user03@gmail.com',
+      password: 'welcome123',
+      orders: [
+        {
+          products: [products[10]._id, products[11]._id, products[11]._id]
+        }
+      ]
+    });
+
+    await User.create({
+      firstName: 'user04',
+      lastName: 'user04',
+      email: 'user04@gmail.com',
+      password: 'welcome123',
+      orders: [
+        {
+          products: [products[4]._id, products[4]._id, products[12]._id]
+        }
+      ]
+    });
+    await User.create({
+      firstName: 'user05',
+      lastName: 'user05',
+      email: 'user05@gmail.com',
+      password: 'welcome123',
+      orders: [
+        {
+          products: [products[12]._id, products[13]._id, products[13]._id]
+        }
+      ]
+    });
+
+    await User.create({
+      firstName: 'user06',
+      lastName: 'user06',
+      email: 'user06@gmail.com',
+      password: 'welcome123',
+      orders: [
+        {
+          products: [products[20]._id, products[20]._id, products[20]._id]
+        }
+      ]
+    });
+
+    await User.create({
+      firstName: 'user07',
+      lastName: 'user07',
+      email: 'user05@gmail.com',
+      password: 'welcome123',
+      orders: [
+        {
+          products: [products[15]._id, products[16]._id, products[16]._id]
+        }
+      ]
+    });
+
+    await User.create({
+      firstName: 'user08',
+      lastName: 'user08',
+      email: 'user08@gmail.com',
+      password: 'welcome123',
+      orders: [
+        {
+          products: [products[18]._id, products[17]._id, products[1]._id, products[1]._id]
         }
       ]
     });
@@ -374,6 +457,19 @@ db.once('open', async () => {
       email: 'jane.doe@gmail.com',
       password: 'welcome123'
     });
+
+    await User.create({
+      firstName: 'user01',
+      lastName: 'user01',
+      email: 'user01@gmail.com',
+      password: 'welcome123',
+      orders: [
+        {
+          products: [products[0]._id, products[0]._id, products[1]._id]
+        }
+      ]
+    });
+
 
     console.log('users seeded');
 
