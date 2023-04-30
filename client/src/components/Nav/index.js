@@ -2,7 +2,7 @@ import * as React from 'react';
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
 import Cart from "../Cart";
-
+import './nav.css';
 
 export default function Nav() {
 
@@ -11,7 +11,9 @@ export default function Nav() {
         if (Auth.loggedIn()) {
             return (
                 <div className="container-fluid">
-                    <Link className="navbar-brand" to="#"><img src="/favicon.ico" alt="medhub logo" width="60" height="48" style={{borderRadius: '10%'}}/></Link>
+                     <div className="logo-container">
+    <img src="/favicon.ico" alt="medhub logo" width="60" height="48" style={{borderRadius: '10%'}}/>
+  </div>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -49,7 +51,9 @@ export default function Nav() {
         } else {
             return (
                 <div className="container-fluid">
-                    <Link className="navbar-brand" to="#"><img src="/favicon.ico" alt="medhub logo" width="60" height="48" style={{borderRadius: '10%'}}/></Link>
+                   <div className="logo-container">
+    <img src="/favicon.ico" alt="medhub logo" width="60" height="48" style={{borderRadius: '10%'}}/>
+  </div>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
