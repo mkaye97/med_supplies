@@ -149,3 +149,13 @@ body {
 .container-top {
     margin-top: 40px;
 }
+
+
+
+.dashboard-bg-img {
+
+    background-image: url('../../public/images/dashboard_bg_01.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}

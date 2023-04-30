@@ -62,6 +62,7 @@ const typeDefs = gql`
     charities: [Charity]
     rentals: [Rental]
     donations: [Donation]
+    users:[User]
   }
 
   type Charity {
@@ -69,6 +70,7 @@ const typeDefs = gql`
     charityName: String
     description: String
   }
+
 
  type Donation {
   _id: ID!
