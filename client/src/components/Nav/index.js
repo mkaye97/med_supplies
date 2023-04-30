@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
+import Cart from "../Cart";
 
 
 export default function Nav() {
@@ -41,6 +42,7 @@ export default function Nav() {
 
                         </ul>
                     </div>
+                    <Cart />
                 </div>
             )
 
@@ -74,6 +76,7 @@ export default function Nav() {
                         </ul>
 
                     </div>
+                    <Cart />
                 </div>
             )
         }
