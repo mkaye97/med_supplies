@@ -36,7 +36,7 @@ export default function Nav() {
                                 <Link className="nav-link" to="/about">About Us</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="#" onClick={() => Auth.logout()}>Logout</Link>
+                                <Link className="nav-link" to="#" onClick={() => Auth.logout()}>Logout </Link>
                             </li>
 
                         </ul>
