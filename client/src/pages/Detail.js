@@ -96,25 +96,30 @@ function Detail() {
                     </div>
                     <Link to="/products" className="btn btn-light">← Back to Products</Link>
                 
-                    <h2>{currentProduct.name}</h2>
-
-                    <p>{currentProduct.description}</p>
-
-                    <p>
-                        <strong>Price:</strong>${currentProduct.price}{' '}
-                        <button className="btn btn-primary" onClick={addToCart}>Add to Cart</button>
-                        <button className="btn btn-primary"
-                            disabled={!cart.find((p) => p._id === currentProduct._id)}
-                            onClick={removeFromCart}
-                        >
-                            Remove from Cart
-                        </button>
-                    </p>
-
-                    <img
-                        src={`/images/${currentProduct.image}`}
-                        alt={currentProduct.name}
-                    />
+                    <div className="detail-content">
+    <h2>{currentProduct.name}</h2>
+    <p>{currentProduct.description}</p>
+    <p>
+  <strong>Price:</strong>${currentProduct.price}{' '}
+</p>
+<div className="button-container">
+  <button className="btn btn-primary" onClick={addToCart}>
+    Add to Cart
+  </button>
+  <button
+    className="btn btn-primary"
+    disabled={!cart.find((p) => p._id === currentProduct._id)}
+    onClick={removeFromCart}
+  >
+    Remove from Cart
+  </button>
+</div>
+    <img
+        className="product-image"
+        src={`/images/${currentProduct.image}`}
+        alt={currentProduct.name}
+    />
+</div>
                 </div>
             ) : null}
             {loading ? <img src={spinner} alt="loading" /> : null}
