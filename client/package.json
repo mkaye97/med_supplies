@@ -19,8 +19,10 @@
     "dotenv": "^16.0.3",
     "graphql": "^16.3.0",
     "jwt-decode": "^2.2.0",
+    "plotly.js": "^2.22.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-plotly.js": "^2.6.0",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^0.2.4"
