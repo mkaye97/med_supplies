@@ -4,7 +4,10 @@ import { pluralize } from "../../utils/helpers"
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
-import './index.css';
+import { Card, CardActionArea, CardContent, CardMedia, Typography, Button } from '@material-ui/core';
+
+// import './index.css';
+
 
 function ProductItem(item) {
     const [state, dispatch] = useStoreContext();
@@ -41,20 +44,34 @@ function ProductItem(item) {
     }
 
     return (
-
-        <div className="card" key={_id} style={{ width: '260px', height: '400px', marginBottom: '20px' }}>
-            <Link to={`/products/${_id}`}>
-                <img className="card-img-top" src={`/images/${image}`} alt="Card image cap" style={{ width: '260px', height: '200px' }} />
-            </Link>
-            <div className="card-body">
-                <h6 className="card-title">{name}</h6>
-                <p className="card-text"> <span>${price}</span></p>
-                <p className="card-text"><small class="text-muted">{quantity} {pluralize("item", quantity)} in stock</small></p>
-                <button className="btn btn-primary" onClick={addToCart}>Add to cart</button>
-            </div>
-        </div>
-
-    );
-}
+        <Card key={_id} style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+          <CardActionArea component={Link} to={`/products/${_id}`}>
+            <CardMedia
+              component="img"
+              alt={name}
+              height="200"
+              image={`/images/${image}`}
+              title={name}
+            />
+          </CardActionArea>
+          <CardContent style={{ flexGrow: 1 }}>
+            <Typography gutterBottom variant="h6" component="h2">
+              {name}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              <span>${price}</span>
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              <small>
+                {quantity} {pluralize('item', quantity)} in stock
+              </small>
+            </Typography>
+          </CardContent>
+          <Button variant="contained" color="primary" onClick={addToCart} style={{ margin: '8px' }}>
+            Add to cart
+          </Button>
+        </Card>
+      );
+    }
 
 export default ProductItem;

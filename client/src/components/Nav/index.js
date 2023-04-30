@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
+import Cart from "../Cart";
 
 
 export default function Nav() {
@@ -10,7 +11,7 @@ export default function Nav() {
         if (Auth.loggedIn()) {
             return (
                 <div className="container-fluid">
-                    <Link className="navbar-brand" to="#"><img src="/favicon.ico" alt="medhub logo" width="30" height="24" /></Link>
+                    <Link className="navbar-brand" to="#"><img src="/favicon.ico" alt="medhub logo" width="60" height="48" style={{borderRadius: '10%'}}/></Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -36,18 +37,19 @@ export default function Nav() {
                                 <Link className="nav-link" to="/about">About Us</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="#" onClick={() => Auth.logout()}>Logout</Link>
+                                <Link className="nav-link" to="#" onClick={() => Auth.logout()}>Logout </Link>
                             </li>
 
                         </ul>
                     </div>
+                    <Cart />
                 </div>
             )
 
         } else {
             return (
                 <div className="container-fluid">
-                    <Link className="navbar-brand" to="#"><img src="/favicon.ico" alt="medhub logo" width="30" height="24" /></Link>
+                    <Link className="navbar-brand" to="#"><img src="/favicon.ico" alt="medhub logo" width="60" height="48" style={{borderRadius: '10%'}}/></Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -74,6 +76,7 @@ export default function Nav() {
                         </ul>
 
                     </div>
+                    <Cart />
                 </div>
             )
         }

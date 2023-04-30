@@ -89,13 +89,36 @@ export const QUERY_PRODUCTS = gql`
       image
       category {
         _id
+        name
       }
     }
   }
 `;
+
 export const QUERY_USER = gql`
   {
     user {
+      firstName
+      lastName
+      orders {
+        _id
+        purchaseDate
+        products {
+          _id
+          name
+          description
+          price
+          quantity
+          image
+        }
+      }
+    }
+  }
+`;
+
+export const QUERY_USERS = gql`
+  {
+    users {
       firstName
       lastName
       orders {

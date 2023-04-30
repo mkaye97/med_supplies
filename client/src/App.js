@@ -20,6 +20,7 @@ import { StoreProvider } from './utils/GlobalState';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
 import About from './pages/About';
+import Dashboard from './pages/Dashboard';
 
 
 
@@ -69,6 +70,10 @@ function App() {
               <Route
                 path="/success"
                 element={<Success />}
+              />
+              <Route
+                path="/dashboard"
+                element={<Dashboard />}
               />
               <Route
                 path="/orderHistory"

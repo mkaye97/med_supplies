@@ -63,6 +63,10 @@ const resolvers = {
       return await Donation.find({});
     },
 
+    users: async () => {
+      return await User.find({});
+    },
+
     /*
     End of new lines added
     */
