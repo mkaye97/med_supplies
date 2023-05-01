@@ -145,7 +145,7 @@ This project is licensed under the MIT License
 
 ## Deployment Link
 
-<img src='./ReadmeOnlyImages/heroku.png' style="width: 50px"><img> 
-
 [Heroku Deployment](https://med-hub.herokuapp.com)
+
+<img src='./ReadmeOnlyImages/heroku.png' style="width: 50px"><img> 
 
