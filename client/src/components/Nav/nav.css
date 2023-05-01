@@ -1,0 +1,20 @@
+.logo-container {
+        display: inline-block;
+        width: 60px;
+        height: 48px;
+        background-color: #fff; /* Change this to the desired background color */
+        border-radius: 10%;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      .logo-container img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .nav-link {
+        font-size: 20px; 
+      }

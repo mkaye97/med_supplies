@@ -62,18 +62,6 @@ db.once('open', async () => {
         rentalStock: 10
       },
       {
-        name: "BlueTooth Blood Pressure Monitor",
-        description: "Bluetooth Blood Pressure Monitors for Home Use",
-        image: "bluetoothbloodpressure.jpg",
-        price: 65.99,
-        quantity: 10,
-        category: categories[2]._id,
-        isRentable: true,
-        rentalPrice: 1.99,
-        rentalPeriod: 7,
-        rentalStock: 10
-      },
-      {
         name: "Pregnancy Test",
         description: "Can tell you results 6 days sooner than your missed period",
         image: "clearbluepregotest3.jpg",

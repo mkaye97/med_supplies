@@ -90,7 +90,7 @@ export default function About() {
         <div className="row mt-4">
           {/* Replace the names, descriptions, and GitHub repo links for each founder */}
           {[
-            { name: "Matthew Kaye", description: "Front-End Fighter", github: "https://github.com/mkaye97", imageName: "matt.png" },
+            { name: "Matthew Kaye", description: "Deployment Demigod", github: "https://github.com/mkaye97", imageName: "matt.png" },
             { name: "Gavin Price", description: "Functionality Frontiersman", github: "https://github.com/RealGavinPrice", imageName: "gavin.jpeg" },
             { name: "Abdiel Villalobos", description: "Style Star", github: "https://github.com/ablobos", imageName: "ab.jpg" },
             { name: "Uchenna Obicheta", description: "Backend Boss", github: "https://github.com/uobie80", imageName: "avatar-circle.png" },
@@ -123,7 +123,7 @@ export default function About() {
             <p className="lead">
               At MedHub, we believe that everyone should have access to affordable medical supplies.
               We work tirelessly to offer high-quality products at competitive prices, ensuring that
-              healthcare is accessible to all.
+              anyone can have access to a healthy lifestyle.
             </p>
           </div>
           <div className="col-md-5">
